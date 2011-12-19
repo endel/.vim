@@ -51,8 +51,7 @@ map <Leader><Tab> :b#<CR>
 map <Leader>n :NERDTreeToggle<CR>
 
 " Open .vimrc for quick-edit.
-let mapleader = ","
-nmap <leader>v :tabedit $MYVIMRC<CR>
+nmap <Leader>v :tabedit $MYVIMRC<CR>
 
 if has("autocmd")
   " remember last location in file
