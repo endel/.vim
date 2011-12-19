@@ -45,15 +45,22 @@ set smartcase
 " ------------------
 "
 " Leader + Tab: Switching to the previously edited buffer
-nnoremap <unique> <silent><Leader><Tab> :b#<CR>
+map <Leader><Tab> :b#<CR>
 
 " NERDTree
 map <Leader>n :NERDTreeToggle<CR>
+
+" Open .vimrc for quick-edit.
+let mapleader = ","
+nmap <leader>v :tabedit $MYVIMRC<CR>
 
 if has("autocmd")
   " remember last location in file
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal g'\"" | endif
+
+  " Auto-reload VIM configuration when .vimrc is changed
+  autocmd bufwritepost .vimrc source $MYVIMRC
 endif
 
 " ruby
