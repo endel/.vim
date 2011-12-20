@@ -162,11 +162,23 @@ set smartcase
 " Leader + Tab: Switching to the previously edited buffer
 map <Leader><Tab> :b#<CR>
 
+"Key mapping for textmate-like indentation
+nmap <D-[> <<
+nmap <D-]> >>
+vmap <D-[> <gv
+vmap <D-]> >gv
+
+"key mapping for saving file
+nmap <C-s> :w<CR>
+
 " NERDTree
 map <Leader>n :NERDTreeToggle<CR>
 
 " Copy from cursor to the end of the line
 nnoremap Y  y$
+
+" Close current buffer
+map <Leader>d :bdelete<CR>
 
 map  <F1>   <Esc>
 map! <F1>   <Esc>
@@ -179,7 +191,6 @@ map <F8>    :wa<Bar>make<CR>
 map <F9>    :Run<CR>
 map <silent> <F10>   :let tagsfile = tempname()\|silent exe "!ctags -f ".tagsfile." \"%\""\|let &l:tags .= "," . tagsfile\|unlet tagsfile<CR>
 map <silent> <F11> :if exists(":BufExplorer")<Bar>exe "BufExplorer"<Bar>else<Bar>buffers<Bar>endif<CR>
-map <S-F4>  :bdelete<CR>
 
 noremap  <S-Insert> <MiddleMouse>
 noremap! <S-Insert> <MiddleMouse>
@@ -189,7 +200,7 @@ if exists(":nohls")
 endif
 
 " Open .vimrc for quick-edit.
-map <Leader>v  :so ~/.vimrc<CR>
+map <Leader>v  :source $MYVIMRC<CR>
 
 if has("autocmd")
   " remember last location in file
