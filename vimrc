@@ -17,6 +17,11 @@ set guifont=Monaco:h14
 set background=dark
 colorscheme vividchalk
 
+" hide toolbar
+if has("gui_running")
+    set guioptions=egmrt
+endif
+
 " custom configuration
 set autoread        " Reload files changed outside automatically
 set laststatus=2    " Always show status line"
@@ -172,13 +177,18 @@ vmap <D-]> >gv
 nmap <C-s> :w<CR>
 
 " NERDTree
+let NERDTreeChDirMode=2
 map <Leader>n :NERDTreeToggle<CR>
 
 " Copy from cursor to the end of the line
 nnoremap Y  y$
 
 " Close current buffer
-map <Leader>d :bdelete<CR>
+map <Leader>d :bd<CR>
+" Close current buffer without saving
+map <Leader>D :bd!<CR>
+" Close and save current buffer
+map <Leader>W :w \| bd<CR>
 
 map  <F1>   <Esc>
 map! <F1>   <Esc>
@@ -194,6 +204,8 @@ map <silent> <F11> :if exists(":BufExplorer")<Bar>exe "BufExplorer"<Bar>else<Bar
 
 noremap  <S-Insert> <MiddleMouse>
 noremap! <S-Insert> <MiddleMouse>
+
+noremap <S-D-CR> :only <CR>
 
 if exists(":nohls")
   nnoremap <silent> <C-L> :nohls<CR><C-L>
