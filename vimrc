@@ -253,7 +253,13 @@ filetype plugin indent on
 " Customizations by filetype
 " 
 
-" ActionScript
+"
+" ActionScript:
+" Make spacing compatible with most IDE's default configuration
+"
 autocmd FileType actionscript set autoindent
 autocmd FileType actionscript set si
-autocmd FileType actionscript set shiftwidth=2
+autocmd FileType actionscript set tabstop=4
+autocmd FileType actionscript set shiftwidth=4
+autocmd FileType actionscript set softtabstop=4
+autocmd FileType actionscript set noexpandtab
