@@ -1,8 +1,10 @@
 " Setup pathogen.vim to autoload bundled plugins
 runtime bundle/vim-pathogen/autoload/pathogen.vim
+
 "runtime bundle/vim-repeat/autoload/repeat.vim
 
 "necessary on some Linux distros for pathogen to properly load bundles
+"set nocompatibl
 filetype on
 filetype off
 
@@ -35,6 +37,16 @@ set foldmethod=marker
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%{SL('CapsLockStatusline')}%y%{SL('fugitive#statusline')}%#ErrorMsg#%{SL('SyntasticStatuslineFlag')}%*%=%-14.(%l,%c%V%)\ %P
 
 " Snipmate
+"let g:snipMate.scope_aliases= {'objc' :'c'
+		"\ ,'cpp': 'c'
+		"\ ,'cs':'c'
+		"\ ,'xhtml': 'html'
+		"\ ,'html': 'javascript'
+		"\ ,'php': 'php,html,javascript'
+		"\ ,'ur': 'html,javascript'
+		"\ ,'mxml': 'actionscript'
+		"\ ,'eruby': 'eruby,eruby-rails,html'
+		"\ }
 
 
 " Change root directory tree when enter on any filename
@@ -186,7 +198,10 @@ nmap <C-s> :w<CR>
 " NERDTree
 let NERDTreeChDirMode=2
 let g:NERDTreeMinimalUI=1
+" Toggle NERDTree
 map <Leader>n :NERDTreeToggle<CR>
+" Open NERDTree
+map <Leader>N :NERDTree<CR>
 
 " Copy from cursor to the end of the line
 nnoremap Y  y$
@@ -198,20 +213,30 @@ map <Leader>D :bd!<CR>
 " Close and save current buffer
 map <Leader>W :w \| bd<CR>
 
+" Force yourself to stop using arrow keys
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+
+" Easy window navigation
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+" Utilty
 map  <F1>   <Esc>
 map! <F1>   <Esc>
-map <F3>    :cnext<CR>
-map <F4>    :cc<CR>
-map <F5>    :cprev<CR>
+"map <F3>    :cnext<CR>
+"map <F4>    :cc<CR>
+"map <F5>    :cprev<CR>
 nmap <silent> <F6> :if &previewwindow<Bar>pclose<Bar>elseif exists(':Gstatus')<Bar>exe 'Gstatus'<Bar>else<Bar>ls<Bar>endif<CR>
 nmap <silent> <F7> :if exists(':Glcd')<Bar>exe 'Glcd'<Bar>elseif exists(':Rlcd')<Bar>exe 'Rlcd'<Bar>else<Bar>lcd %:h<Bar>endif<CR>
 map <F8>    :wa<Bar>make<CR>
 map <F9>    :Run<CR>
 map <silent> <F10>   :let tagsfile = tempname()\|silent exe "!ctags -f ".tagsfile." \"%\""\|let &l:tags .= "," . tagsfile\|unlet tagsfile<CR>
 map <silent> <F11> :if exists(":BufExplorer")<Bar>exe "BufExplorer"<Bar>else<Bar>buffers<Bar>endif<CR>
-
-noremap  <S-Insert> <MiddleMouse>
-noremap! <S-Insert> <MiddleMouse>
 
 " Disable middle-click paste (causes too many accidents with crappy mice)
 map <MiddleMouse> <Nop>
@@ -230,8 +255,9 @@ map <C-n> :bnext<CR>
 " Expand current buffer with Command + Shift + Return
 noremap <S-D-CR> :only <CR>
 
+" Hide search highlight
 if exists(":nohls")
-  nnoremap <silent> <C-L> :nohls<CR><C-L>
+  nmap <silent> ,/ :nohls<CR>
 endif
 
 " Open .vimrc for quick-edit.
