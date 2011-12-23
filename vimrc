@@ -34,6 +34,9 @@ set printoptions=paper:letter
 set foldmethod=marker
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%{SL('CapsLockStatusline')}%y%{SL('fugitive#statusline')}%#ErrorMsg#%{SL('SyntasticStatuslineFlag')}%*%=%-14.(%l,%c%V%)\ %P
 
+" Snipmate
+
+
 " Change root directory tree when enter on any filename
 " TODO: change even when enters on NERDTree
 autocmd BufEnter * :Rooter
