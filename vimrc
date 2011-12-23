@@ -29,11 +29,14 @@ set modelines=5     " Debian likes to disable this
 set history=1000    " Store lots of :cmdline history
 set showcmd         " Show incomplete cmds down the bottom
 set showmode        " Show current mode down the bottom
-set ttimeoutlen=50  " Make Esc work faster"
+set ttimeoutlen=50  " Make Esc work faster
 set printoptions=paper:letter
 set foldmethod=marker
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%{SL('CapsLockStatusline')}%y%{SL('fugitive#statusline')}%#ErrorMsg#%{SL('SyntasticStatuslineFlag')}%*%=%-14.(%l,%c%V%)\ %P
 
+" Change root directory tree when enter on any filename
+" TODO: change even when enters on NERDTree
+autocmd BufEnter * :Rooter
 
 if exists('+undofile')
   set undofile
@@ -50,7 +53,6 @@ if has("eval")
   let g:surround_{char2nr('s')} = " \r"
   let g:surround_{char2nr('^')} = "/^\r$/"
   let g:surround_indent = 1
-  
 
   " used for statusline
   function! SL(function)
@@ -145,6 +147,8 @@ endif
 " style
 set number
 set autoindent
+" Highlight the current line
+set cursorline
 
 " whitespace
 set nowrap
@@ -178,6 +182,7 @@ nmap <C-s> :w<CR>
 
 " NERDTree
 let NERDTreeChDirMode=2
+let g:NERDTreeMinimalUI=1
 map <Leader>n :NERDTreeToggle<CR>
 
 " Copy from cursor to the end of the line
@@ -205,6 +210,21 @@ map <silent> <F11> :if exists(":BufExplorer")<Bar>exe "BufExplorer"<Bar>else<Bar
 noremap  <S-Insert> <MiddleMouse>
 noremap! <S-Insert> <MiddleMouse>
 
+" Disable middle-click paste (causes too many accidents with crappy mice)
+map <MiddleMouse> <Nop>
+imap <MiddleMouse> <Nop>
+map <2-MiddleMouse> <Nop>
+imap <2-MiddleMouse> <Nop>
+map <3-MiddleMouse> <Nop>
+imap <3-MiddleMouse> <Nop>
+map <4-MiddleMouse> <Nop>
+imap <4-MiddleMouse> <Nop>
+
+" Before / next buffer navigation using ctrl + p / ctrl + n
+map <C-p> :bprev<CR>
+map <C-n> :bnext<CR>
+
+" Expand current buffer with Command + Shift + Return
 noremap <S-D-CR> :only <CR>
 
 if exists(":nohls")
@@ -228,3 +248,12 @@ au BufRead,BufNewFile {Gemfile,Rakefile,config.ru} set ft=ruby
 
 " load the plugin and indent settings for the detected filetype
 filetype plugin indent on
+
+"
+" Customizations by filetype
+" 
+
+" ActionScript
+autocmd FileType actionscript set autoindent
+autocmd FileType actionscript set si
+autocmd FileType actionscript set shiftwidth=2
