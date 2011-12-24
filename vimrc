@@ -1,10 +1,7 @@
 " Setup pathogen.vim to autoload bundled plugins
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 
-"runtime bundle/vim-repeat/autoload/repeat.vim
-
 "necessary on some Linux distros for pathogen to properly load bundles
-"set nocompatibl
 filetype on
 filetype off
 
@@ -13,7 +10,7 @@ call pathogen#infect()
 call pathogen#helptags()
 
 " colors
-syntax on
+syntax enable
 
 set guifont=Monaco:h14
 set background=dark
@@ -24,17 +21,54 @@ if has("gui_running")
     set guioptions=egmrt
 endif
 
-" custom configuration
-set autoread        " Reload files changed outside automatically
-set laststatus=2    " Always show status line"
-set modelines=5     " Debian likes to disable this
-set history=1000    " Store lots of :cmdline history
-set showcmd         " Show incomplete cmds down the bottom
-set showmode        " Show current mode down the bottom
-set ttimeoutlen=50  " Make Esc work faster
+" style
+set number
+set autoindent
+
+" Highlight the current line
+set cursorline
+
+" Set the terminal's title
+set title
+
+" whitespace
+set nowrap
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+set list listchars=tab:\ \ ,trail:·
+
+" searching
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
+set hidden                " Handle multiple buffers better.
+
+set wildmenu              " Enhanced command line completion.
+set wildmode=longest,list " Use emacs-style tab completion when selecting files, etc
+
+set autoread              " Reload files changed outside automatically
+set history=1000          " Store lots of :cmdline history
+
+set showcmd               " Show incomplete cmds down the bottom
+set showmode              " Show current mode down the bottom
+
+set ttimeoutlen=50        " Make Esc work faster
 set printoptions=paper:letter
 set foldmethod=marker
+
+set laststatus=2          " Always show status line
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%{SL('CapsLockStatusline')}%y%{SL('fugitive#statusline')}%#ErrorMsg#%{SL('SyntasticStatuslineFlag')}%*%=%-14.(%l,%c%V%)\ %P
+
+" Plugin customizations
+let g:bufExplorerShowRelativePath=1
+
+" NERDTree
+let NERDTreeChDirMode=2
+let g:NERDTreeMinimalUI=1
 
 " Snipmate
 "let g:snipMate.scope_aliases= {'objc' :'c'
@@ -49,8 +83,7 @@ set statusline=[%n]\ %<%.99f\ %h%w%m%r%{SL('CapsLockStatusline')}%y%{SL('fugitiv
 		"\ }
 
 
-" Change root directory tree when enter on any filename
-" TODO: change even when enters on NERDTree
+" Change root directory on buffer enter
 autocmd BufEnter * :Rooter
 
 if exists('+undofile')
@@ -159,32 +192,15 @@ if has("eval")
 
 endif
 
-" style
-set number
-set autoindent
-" Highlight the current line
-set cursorline
-
-" whitespace
-set nowrap
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
-set expandtab
-set list listchars=tab:\ \ ,trail:·
-
-" searching
-set hlsearch
-set incsearch
-set ignorecase
-set smartcase
-
 "
 " Custom key mapping
 " ------------------
 "
 " Leader + Tab: Switching to the previously edited buffer
 map <Leader><Tab> :b#<CR>
+
+" Markdown preview.  http://rtomayko.github.com/bcat/
+map <Leader>md :!markdown % <Bar>bcat<CR>
 
 "Key mapping for textmate-like indentation
 nmap <D-[> <<
@@ -195,13 +211,20 @@ vmap <D-]> >gv
 "key mapping for saving file
 nmap <C-s> :w<CR>
 
-" NERDTree
-let NERDTreeChDirMode=2
-let g:NERDTreeMinimalUI=1
 " Toggle NERDTree
-map <Leader>n :NERDTreeToggle<CR>
+map <Leader>l :NERDTreeToggle<CR>
 " Open NERDTree
-map <Leader>N :NERDTree<CR>
+map <Leader>L :NERDTree<CR>
+
+" vim-commentary
+xmap <Leader>c  <Plug>Commentary
+nmap <Leader>c  <Plug>Commentary
+nmap <Leader>cc <Plug>CommentaryLine
+
+" ack.vim
+nmap <silent> <unique> <Leader>a :Ack
+nmap <silent> <unique> <Leader>as :AckFromSearch
+nmap <silent> <unique> <Leader>af :AckFile
 
 " Copy from cursor to the end of the line
 nnoremap Y  y$
@@ -272,23 +295,15 @@ if has("autocmd")
   autocmd BufWritePost .vimrc source $MYVIMRC
 endif
 
-" ruby
-au BufRead,BufNewFile {Gemfile,Rakefile,config.ru} set ft=ruby
-
-" load the plugin and indent settings for the detected filetype
-filetype plugin indent on
-
 "
-" Customizations by filetype
+" Identation by filetype
 " 
 
 "
 " ActionScript:
 " Make spacing compatible with most IDE's default configuration
 "
-autocmd FileType actionscript set autoindent
-autocmd FileType actionscript set si
-autocmd FileType actionscript set tabstop=4
-autocmd FileType actionscript set shiftwidth=4
-autocmd FileType actionscript set softtabstop=4
-autocmd FileType actionscript set noexpandtab
+autocmd FileType actionscript setlocal tabstop=4
+autocmd FileType actionscript setlocal shiftwidth=4
+autocmd FileType actionscript setlocal softtabstop=4
+autocmd FileType actionscript setlocal expandtab
