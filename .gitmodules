@@ -102,4 +102,4 @@
 	url = https://github.com/scrooloose/nerdcommenter.git
 [submodule "bundle/vim-irblack"]
 	path = bundle/vim-irblack
-	url = https://github.com/wgibbs/vim-irblack.git
+	url = https://github.com/skalnik/vim-irblack.git

@@ -205,9 +205,6 @@ map <Leader><Tab> :b#<CR>
 " Leader + n: New buffer
 map <Leader>n :new<CR>
 
-" Markdown preview.  http://rtomayko.github.com/bcat/
-map <Leader>md :!markdown % <Bar>bcat<CR>
-
 "Key mapping for textmate-like indentation
 nmap <D-[> <<
 nmap <D-]> >>
