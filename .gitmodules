@@ -97,3 +97,9 @@
 [submodule "bundle/vim-commentary"]
 	path = bundle/vim-commentary
 	url = https://github.com/tpope/vim-commentary
+[submodule "bundle/nerdcommenter"]
+	path = bundle/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter.git
+[submodule "bundle/vim-irblack"]
+	path = bundle/vim-irblack
+	url = https://github.com/wgibbs/vim-irblack.git

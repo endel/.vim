@@ -1,9 +1,9 @@
 " Setup pathogen.vim to autoload bundled plugins
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 
-"necessary on some Linux distros for pathogen to properly load bundles
-filetype on
-filetype off
+"load ftplugins and indent files
+filetype plugin on
+filetype indent on
 
 " load all bundles
 call pathogen#infect()
@@ -14,7 +14,9 @@ syntax enable
 
 set guifont=Monaco:h14
 set background=dark
-colorscheme vividchalk
+
+colorscheme ir_black
+"colorscheme vividchalk
 
 " hide toolbar
 if has("gui_running")
@@ -196,8 +198,12 @@ endif
 " Custom key mapping
 " ------------------
 "
+
 " Leader + Tab: Switching to the previously edited buffer
 map <Leader><Tab> :b#<CR>
+
+" Leader + n: New buffer
+map <Leader>n :new<CR>
 
 " Markdown preview.  http://rtomayko.github.com/bcat/
 map <Leader>md :!markdown % <Bar>bcat<CR>
@@ -215,11 +221,6 @@ nmap <C-s> :w<CR>
 map <Leader>l :NERDTreeToggle<CR>
 " Open NERDTree
 map <Leader>L :NERDTree<CR>
-
-" vim-commentary
-xmap <Leader>c  <Plug>Commentary
-nmap <Leader>c  <Plug>Commentary
-nmap <Leader>cc <Plug>CommentaryLine
 
 " ack.vim
 nmap <silent> <unique> <Leader>a :Ack
