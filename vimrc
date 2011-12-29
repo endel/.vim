@@ -15,7 +15,8 @@ syntax enable
 set guifont=Monaco:h14
 set background=dark
 
-colorscheme ir_black
+colorscheme github
+"colorscheme jellybeans
 "colorscheme vividchalk
 
 " hide toolbar
@@ -66,6 +67,7 @@ set laststatus=2          " Always show status line
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%{SL('CapsLockStatusline')}%y%{SL('fugitive#statusline')}%#ErrorMsg#%{SL('SyntasticStatuslineFlag')}%*%=%-14.(%l,%c%V%)\ %P
 
 " Plugin customizations
+
 let g:bufExplorerShowRelativePath=1
 
 " NERDTree
@@ -73,16 +75,16 @@ let NERDTreeChDirMode=2
 let g:NERDTreeMinimalUI=1
 
 " Snipmate
-"let g:snipMate.scope_aliases= {'objc' :'c'
-		"\ ,'cpp': 'c'
-		"\ ,'cs':'c'
-		"\ ,'xhtml': 'html'
-		"\ ,'html': 'javascript'
-		"\ ,'php': 'php,html,javascript'
-		"\ ,'ur': 'html,javascript'
-		"\ ,'mxml': 'actionscript'
-		"\ ,'eruby': 'eruby,eruby-rails,html'
-		"\ }
+"let g:snipMate['scope_aliases'] = {'objc' :'c'
+    "\ ,'cpp': 'c'
+    "\ ,'cs':'c'
+    "\ ,'xhtml': 'html'
+    "\ ,'html': 'javascript'
+    "\ ,'php': 'php,html,javascript'
+    "\ ,'ur': 'html,javascript'
+    "\ ,'mxml': 'actionscript'
+    "\ ,'eruby': 'eruby,eruby-rails,html'
+    "\ }
 
 
 " Change root directory on buffer enter

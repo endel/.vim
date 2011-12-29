@@ -40,9 +40,6 @@
 [submodule "bundle/vim-ruby"]
 	path = bundle/vim-ruby
 	url = https://github.com/vim-ruby/vim-ruby.git
-[submodule "bundle/vim-colors-solarized"]
-	path = bundle/vim-colors-solarized
-	url = https://github.com/altercation/vim-colors-solarized.git
 [submodule "bundle/gist-vim"]
 	path = bundle/gist-vim
 	url = https://github.com/mattn/gist-vim.git
@@ -55,9 +52,6 @@
 [submodule "bundle/vim-supertab"]
 	path = bundle/vim-supertab
 	url = https://github.com/tsaleh/vim-supertab.git
-[submodule "bundle/vim-vividchalk"]
-	path = bundle/vim-vividchalk
-	url = https://github.com/tpope/vim-vividchalk
 [submodule "bundle/vim-haml"]
 	path = bundle/vim-haml
 	url = https://github.com/tpope/vim-haml.git
@@ -100,6 +94,15 @@
 [submodule "bundle/nerdcommenter"]
 	path = bundle/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
-[submodule "bundle/vim-irblack"]
-	path = bundle/vim-irblack
-	url = https://github.com/skalnik/vim-irblack.git
+[submodule "bundle/color-jellybeans"]
+	path = bundle/color-jellybeans
+	url = https://github.com/nanotech/jellybeans.vim.git
+[submodule "bundle/color-github"]
+	path = bundle/color-github
+	url = https://github.com/endel/vim-github-colorscheme.git
+[submodule "bundle/color-solarized"]
+	path = bundle/color-solarized
+	url = https://github.com/altercation/vim-colors-solarized.git
+[submodule "bundle/color-vividchalk"]
+	path = bundle/color-vividchalk
+	url = https://github.com/tpope/vim-vividchalk
