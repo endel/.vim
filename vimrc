@@ -13,10 +13,12 @@ call pathogen#helptags()
 syntax enable
 
 set guifont=Monaco:h14
-set background=dark
+set background=light
+"set background=dark
 
-colorscheme github
 "colorscheme jellybeans
+colorscheme solarized
+"colorscheme github
 "colorscheme vividchalk
 
 " hide toolbar
@@ -74,7 +76,8 @@ let g:bufExplorerShowRelativePath=1
 let NERDTreeChDirMode=2
 let g:NERDTreeMinimalUI=1
 
-" Snipmate
+" Snipmate:
+" TODO: WTF how can I customize this?
 "let g:snipMate['scope_aliases'] = {'objc' :'c'
     "\ ,'cpp': 'c'
     "\ ,'cs':'c'
