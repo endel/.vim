@@ -294,15 +294,13 @@ if exists(":nohls")
 endif
 
 " Open .vimrc for quick-edit.
+map <Leader>ev  :edit $MYVIMRC<CR>
 map <Leader>v  :source $MYVIMRC<CR>
 
 if has("autocmd")
   " remember last location in file
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal g'\"" | endif
-
-  " Auto-reload VIM configuration when .vimrc is changed
-  autocmd BufWritePost .vimrc source $MYVIMRC
 endif
 
 "
