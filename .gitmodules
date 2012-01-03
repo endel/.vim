@@ -49,9 +49,6 @@
 [submodule "bundle/vim-less"]
 	path = bundle/vim-less
 	url = https://github.com/groenewege/vim-less.git
-[submodule "bundle/vim-supertab"]
-	path = bundle/vim-supertab
-	url = https://github.com/tsaleh/vim-supertab.git
 [submodule "bundle/vim-haml"]
 	path = bundle/vim-haml
 	url = https://github.com/tpope/vim-haml.git
@@ -103,3 +100,6 @@
 [submodule "bundle/color-vividchalk"]
 	path = bundle/color-vividchalk
 	url = https://github.com/tpope/vim-vividchalk
+[submodule "bundle/supertab"]
+	path = bundle/supertab
+	url = https://github.com/ervandew/supertab.git

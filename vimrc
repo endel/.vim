@@ -23,7 +23,6 @@ colorscheme jellybeans
 "colorscheme github
 "colorscheme vividchalk
 
-
 " style
 set number
 set autoindent
@@ -73,7 +72,6 @@ if has("gui_running")
 endif
 
 " Plugin customizations
-
 let g:bufExplorerShowRelativePath=1
 
 " NERDTree
