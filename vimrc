@@ -1,6 +1,9 @@
 " Setup pathogen.vim to autoload bundled plugins
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 
+" No compatible with vi. Who cares about vi?
+set nocompatible
+
 "load ftplugins and indent files
 filetype plugin on
 filetype indent on
@@ -9,29 +12,21 @@ filetype indent on
 call pathogen#infect()
 call pathogen#helptags()
 
-" colors
+" colors and style
 syntax enable
-
 set guifont=Monaco:h14
-set background=light
-"set background=dark
 
-"colorscheme jellybeans
-colorscheme solarized
+"set background=light
+set background=dark
+colorscheme jellybeans
+"colorscheme solarized
 "colorscheme github
 "colorscheme vividchalk
 
-" hide toolbar
-if has("gui_running")
-    set guioptions=egmrt
-endif
 
 " style
 set number
 set autoindent
-
-" Highlight the current line
-set cursorline
 
 " Set the terminal's title
 set title
@@ -67,6 +62,15 @@ set foldmethod=marker
 
 set laststatus=2          " Always show status line
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%{SL('CapsLockStatusline')}%y%{SL('fugitive#statusline')}%#ErrorMsg#%{SL('SyntasticStatuslineFlag')}%*%=%-14.(%l,%c%V%)\ %P
+
+" Use different colorscheme when are using GUI or console
+if has("gui_running")
+  " Highlight the current line
+  set cursorline
+
+  " hide toolbar
+  set guioptions=egmrt
+endif
 
 " Plugin customizations
 
@@ -204,6 +208,9 @@ endif
 " ------------------
 "
 
+" Avoid you pressing shift every time to enter on cmdline mode.
+nnoremap ; :
+
 " Leader + Tab: Switching to the previously edited buffer
 map <Leader><Tab> :b#<CR>
 
@@ -216,7 +223,7 @@ nmap <D-]> >>
 vmap <D-[> <gv
 vmap <D-]> >gv
 
-"key mapping for saving file
+" Ctrl + S shortcut to save file
 nmap <C-s> :w<CR>
 
 " Toggle NERDTree
@@ -262,7 +269,7 @@ nmap <silent> <F7> :if exists(':Glcd')<Bar>exe 'Glcd'<Bar>elseif exists(':Rlcd')
 map <F8>    :wa<Bar>make<CR>
 map <F9>    :Run<CR>
 map <silent> <F10>   :let tagsfile = tempname()\|silent exe "!ctags -f ".tagsfile." \"%\""\|let &l:tags .= "," . tagsfile\|unlet tagsfile<CR>
-map <silent> <F11> :if exists(":BufExplorer")<Bar>exe "BufExplorer"<Bar>else<Bar>buffers<Bar>endif<CR>
+map <Leader>B :if exists(":BufExplorer")<Bar>exe "BufExplorer"<Bar>else<Bar>buffers<Bar>endif<CR>
 
 " Disable middle-click paste (causes too many accidents with crappy mice)
 map <MiddleMouse> <Nop>
