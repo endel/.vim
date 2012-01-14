@@ -18,6 +18,7 @@ It's recommended to you to read how to use each of the listed plugins below.
  * [* ack](https://github.com/mileszs/ack.vim)
  * [* Command-T](https://github.com/wincent/Command-T)
  * [* gist-vim](https://github.com/mattn/gist-vim)
+ * [* vim-powerline](https://github.com/Lokaltog/vim-powerline) - you can install the patched *Iconsolata* font at <code>utils</code> directory.
  * [vim-fugitive](https://github.com/tpope/vim-fugitive)
  * [javascript](https://github.com/pangloss/vim-javascript)
  * [vim-pathogen](https://github.com/tpope/vim-pathogen)
@@ -33,7 +34,6 @@ It's recommended to you to read how to use each of the listed plugins below.
  * [vim-ruby](https://github.com/vim-ruby/vim-ruby)
  * [vim-endwise](https://github.com/tpope/vim-endwise)
  * [vim-less](https://github.com/groenewege/vim-less)
- * [vim-supertab](https://github.com/tsaleh/vim-supertab)
  * [vim-haml](https://github.com/tpope/vim-haml)
  * [vim-cucumber](https://github.com/tpope/vim-cucumber)
  * [delimitMate](https://github.com/Raimondi/delimitMate/)

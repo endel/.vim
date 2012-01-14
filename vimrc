@@ -14,7 +14,7 @@ call pathogen#helptags()
 
 " colors and style
 syntax enable
-set guifont=Monaco:h14
+set guifont=Inconsolata:h14
 
 "set background=light
 set background=dark
@@ -72,6 +72,8 @@ endif
 
 " Plugin customizations
 let g:bufExplorerShowRelativePath=1
+
+let g:Powerline_symbols='fancy'
 
 " NERDTree
 let NERDTreeChDirMode=2
