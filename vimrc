@@ -15,6 +15,7 @@ call pathogen#helptags()
 " colors and style
 syntax enable
 set guifont=Inconsolata:h14
+set lsp=3
 
 "set background=light
 set background=dark
@@ -92,6 +93,9 @@ let g:NERDTreeMinimalUI=1
     "\ ,'eruby': 'eruby,eruby-rails,html'
     "\ }
 
+" Easy diffget on a 3-way diff
+nnoremap dgh :diffget //2 <CR>
+nnoremap dgl :diffget //3 <CR>
 
 " Change root directory on buffer enter
 autocmd BufEnter * :Rooter
@@ -102,7 +106,6 @@ endif
 if v:version >= 700
   set viminfo=!,'20,<50,s10,h
 endif
-
 
 " By Tim Pope
 function! OpenURL(url)
@@ -116,6 +119,7 @@ function! OpenURL(url)
   redraw!
 endfunction
 command! -nargs=1 OpenURL :call OpenURL(<q-args>)
+
 " open URL under cursor in browser
 nnoremap gb :OpenURL <cfile><CR>
 nnoremap gA :OpenURL http://www.answers.com/<cword><CR>
@@ -327,9 +331,12 @@ endif
 
 "
 " ActionScript:
-" Make spacing compatible with most IDE's default configuration
+" - Indentation compatible with most IDE's default configuration
 "
-autocmd FileType actionscript setlocal tabstop=4
-autocmd FileType actionscript setlocal shiftwidth=4
-autocmd FileType actionscript setlocal softtabstop=4
+" JavaScript: 
+" - Indentation compatible with default JSLint config: http://www.jslint.com/
+"
 autocmd FileType actionscript setlocal expandtab
+autocmd FileType actionscript,javascript setlocal tabstop=4
+autocmd FileType actionscript,javascript setlocal shiftwidth=4
+autocmd FileType actionscript,javascript setlocal softtabstop=4

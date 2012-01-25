@@ -62,14 +62,19 @@ Miscellaneous:
  * __Leader + ev__ - Open user ~/.vimrc file (:edit $MYVIMRC)
  * __Leader + v__ - Reload VIM configuration (:source $MYVIMRC)
 
+Diff:
+
+ * __dgh__ - Get diff from left buffer (:diffget //2)
+ * __dgl__ - Get diff from right buffer (:diffget //3)
+
 
 Buffers:
 
  * __Command + Shift + Enter__ - Expand current buffer (:only)
  * __Ctrl + n__ - Go to next buffer (:bnext)
  * __Ctrl + p__ - Go to previous buffer (:bprev)
- * __Leader + Tab__ - Swap to last edited buffer (same as ctrl + 6 or :b#)
- * __Leader + b__ - Close current buffer (:bd)
+ * __Leader + Tab__ - Swap to last edited buffer (:b#)
+ * __Leader + d__ - Close current buffer (:bd)
  * __Leader + D__ - Close current buffer without saving (:bd!)
  * __Leader + W__ - Close current buffer and save (:w | bd)
  * __Leader + n__ - New buffer (:new)
