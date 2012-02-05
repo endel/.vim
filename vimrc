@@ -72,9 +72,9 @@ if has("gui_running")
 endif
 
 " Plugin customizations
-let g:bufExplorerShowRelativePath=1
-
-let g:Powerline_symbols='fancy'
+let g:bufExplorerShowRelativePath=1     " relative paths for buffer explorer
+let g:neocomplcache_enable_at_startup=1 " enable neocomplcache
+let g:Powerline_symbols='fancy'         " fancy statusline
 
 " NERDTree
 let NERDTreeChDirMode=2
@@ -94,8 +94,8 @@ let g:NERDTreeMinimalUI=1
     "\ }
 
 " Easy diffget on a 3-way diff
-nnoremap dgh :diffget //2 <CR>
-nnoremap dgl :diffget //3 <CR>
+nnoremap dgh :diffget //2 \| diffupdate <CR>
+nnoremap dgl :diffget //3 \| diffupdate <CR>
 
 " Change root directory on buffer enter
 autocmd BufEnter * :Rooter
