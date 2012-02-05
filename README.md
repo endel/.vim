@@ -64,8 +64,8 @@ Miscellaneous:
 
 Diff:
 
- * __dgh__ - Get diff from left buffer (:diffget //2)
- * __dgl__ - Get diff from right buffer (:diffget //3)
+ * __dgh__ - Get diff from left buffer (:diffget //2 | diffupdate)
+ * __dgl__ - Get diff from right buffer (:diffget //3 | diffupdate)
 
 
 Buffers:
