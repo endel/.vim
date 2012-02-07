@@ -71,7 +71,15 @@ if has("gui_running")
   set guioptions=egmrt
 endif
 
+"
 " Plugin customizations
+"
+
+" taglist
+let g:Tlist_Use_Right_Window=1
+let g:Tlist_Ctags_Cmd='/usr/local/Cellar/ctags/5.8/bin/ctags'
+let g:Tlist_Inc_Winwidth=400
+
 let g:bufExplorerShowRelativePath=1     " relative paths for buffer explorer
 let g:neocomplcache_enable_at_startup=1 " enable neocomplcache
 let g:Powerline_symbols='fancy'         " fancy statusline
@@ -120,11 +128,23 @@ function! OpenURL(url)
 endfunction
 command! -nargs=1 OpenURL :call OpenURL(<q-args>)
 
-" open URL under cursor in browser
+" mapping to open URL under cursor
 nnoremap gb :OpenURL <cfile><CR>
 nnoremap gA :OpenURL http://www.answers.com/<cword><CR>
 nnoremap gG :OpenURL http://www.google.com/search?q=<cword><CR>
 nnoremap gW :OpenURL http://en.wikipedia.org/wiki/Special:Search?search=<cword><CR>
+
+" By Endel Dreyer
+" Write COMMIT_EDITMSG and push to current branch
+function! PushToCurrentBranch()
+  exe ":Gwrite"
+	let branch = fugitive#statusline()
+	let branch = substitute(branch, '\c\v\[?GIT\(([a-z0-9\-_\./:]+)\)\]?', $BRANCH.' \1', 'g')
+  exe ":Git push origin" . branch
+endfunction
+
+" mapping to write commit and push to current branch
+nnoremap gwp :call PushToCurrentBranch()<CR>
 
 if has("eval")
   " custom configuration for surround.vim
@@ -252,6 +272,8 @@ nmap <C-s> :w<CR>
 map <Leader>l :NERDTreeToggle<CR>
 " Open NERDTree
 map <Leader>L :NERDTree<CR>
+" Toggle NERDTree
+map <Leader>c :TlistToggle<CR>
 
 " ack.vim
 nmap <silent> <unique> <Leader>a :Ack

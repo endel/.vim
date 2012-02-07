@@ -44,6 +44,7 @@ It's recommended to you to read how to use each of the listed plugins below.
  * [snipmate-snippets](https://github.com/honza/snipmate-snippets)
  * [vim-commentary](https://github.com/tpope/vim-commentary)
  * [nerdcommenter](https://github.com/scrooloose/nerdcommenter)
+ * [neocomplcache](https://github.com/Shougo/neocomplcache)
 
 Utility functions, used as helper for some plugins.
 
@@ -61,6 +62,7 @@ Miscellaneous:
  * __,/__ - Hide search highlight (:nohl)
  * __Leader + ev__ - Open user ~/.vimrc file (:edit $MYVIMRC)
  * __Leader + v__ - Reload VIM configuration (:source $MYVIMRC)
+ * __gwp__ - Write commit file and push to current branch (:Gwrite | Git push origin [currentbranch])
 
 Diff:
 
