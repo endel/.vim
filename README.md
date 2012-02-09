@@ -62,6 +62,10 @@ Miscellaneous:
  * __,/__ - Hide search highlight (:nohl)
  * __Leader + ev__ - Open user ~/.vimrc file (:edit $MYVIMRC)
  * __Leader + v__ - Reload VIM configuration (:source $MYVIMRC)
+
+Git / Commiting:
+
+ * __Ctrl + Shift + S__ - Open git status interface (:Gstatus)
  * __gwp__ - Write commit file and push to current branch (:Gwrite | Git push origin [currentbranch])
 
 Diff:

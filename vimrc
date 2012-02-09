@@ -303,12 +303,13 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 
 " Utilty
+map <S-C-s> :Gstatus<CR>
+
 map  <F1>   <Esc>
 map! <F1>   <Esc>
 "map <F3>    :cnext<CR>
 "map <F4>    :cc<CR>
 "map <F5>    :cprev<CR>
-nmap <silent> <F6> :if &previewwindow<Bar>pclose<Bar>elseif exists(':Gstatus')<Bar>exe 'Gstatus'<Bar>else<Bar>ls<Bar>endif<CR>
 nmap <silent> <F7> :if exists(':Glcd')<Bar>exe 'Glcd'<Bar>elseif exists(':Rlcd')<Bar>exe 'Rlcd'<Bar>else<Bar>lcd %:h<Bar>endif<CR>
 map <F8>    :wa<Bar>make<CR>
 map <F9>    :Run<CR>
