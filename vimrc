@@ -74,12 +74,6 @@ endif
 "
 " Plugin customizations
 "
-
-" taglist
-let g:Tlist_Use_Right_Window=1
-let g:Tlist_Ctags_Cmd='/usr/local/Cellar/ctags/5.8/bin/ctags'
-let g:Tlist_Inc_Winwidth=400
-
 let g:bufExplorerShowRelativePath=1     " relative paths for buffer explorer
 let g:neocomplcache_enable_at_startup=1 " enable neocomplcache
 let g:Powerline_symbols='fancy'         " fancy statusline
@@ -88,7 +82,15 @@ let g:Powerline_symbols='fancy'         " fancy statusline
 let NERDTreeChDirMode=2
 let g:NERDTreeMinimalUI=1
 
+" CommandT for filetype
+silent! nnoremap <unique> <silent> <Leader>f :CommandTFiletype<CR>
+
+" CommandT for tags
+silent! nnoremap <unique> <silent> <Leader>T :CommandTTag<CR>
+
 " Snipmate:
+"let g:snips_trigger_key = '<D-+>'
+
 " TODO: WTF how can I customize this?
 "let g:snipMate['scope_aliases'] = {'objc' :'c'
     "\ ,'cpp': 'c'
@@ -145,6 +147,9 @@ endfunction
 
 " mapping to write commit and push to current branch
 nnoremap gwp :call PushToCurrentBranch()<CR>
+
+" mapping to generate tags file
+nnoremap TT :!ctags -R<CR>
 
 if has("eval")
   " custom configuration for surround.vim
@@ -251,7 +256,7 @@ endif
 "
 
 " Avoid you pressing shift every time to enter on cmdline mode.
-nnoremap ; :
+"nnoremap ; :
 
 " Leader + Tab: Switching to the previously edited buffer
 map <Leader><Tab> :b#<CR>
@@ -305,8 +310,6 @@ map <C-l> <C-w>l
 " Utilty
 map <S-C-s> :Gstatus<CR>
 
-map  <F1>   <Esc>
-map! <F1>   <Esc>
 "map <F3>    :cnext<CR>
 "map <F4>    :cc<CR>
 "map <F5>    :cprev<CR>
@@ -335,22 +338,18 @@ noremap <S-D-CR> :only <CR>
 
 " Hide search highlight
 if exists(":nohls")
-  nmap <silent> ,/ :nohls<CR>
+  nmap <silent><Leader>, :nohls<CR>
 endif
 
 " Open .vimrc for quick-edit.
-map <Leader>ev  :edit $MYVIMRC<CR>
-map <Leader>v  :source $MYVIMRC<CR>
+map <Leader>ev :edit $MYVIMRC<CR>
+map <Leader>v :source $MYVIMRC<CR>
 
 if has("autocmd")
   " remember last location in file
-  au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+  autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal g'\"" | endif
 endif
-
-"
-" Identation by filetype
-" 
 
 "
 " ActionScript:
@@ -363,3 +362,17 @@ autocmd FileType actionscript setlocal expandtab
 autocmd FileType actionscript,javascript setlocal tabstop=4
 autocmd FileType actionscript,javascript setlocal shiftwidth=4
 autocmd FileType actionscript,javascript setlocal softtabstop=4
+
+" 
+" Python: Better indentation
+"
+autocmd BufNewFile,BufRead *.py setlocal nosmartindent
+
+"
+" Google protocol buffers
+"
+autocmd Bufread,BufNewFile *.proto set filetype=javascript
+
+" ctags
+let tlist_tex_settings          = 'latex;s:sections;g:graphics;l:labels'
+let tlist_make_settings         = 'make;m:makros;t:targets'
