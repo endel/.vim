@@ -19,9 +19,6 @@
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
-[submodule "bundle/actionscript"]
-	path = bundle/actionscript
-	url = https://github.com/endel/actionscript.vim
 [submodule "bundle/vim-surround.git"]
 	path = bundle/vim-surround
 	url = https://github.com/tpope/vim-surround.git
