@@ -60,7 +60,7 @@ Custom key mapping
 Miscellaneous:
 
  * __Y__ - Yank all characters after current cursor position (y$)
- * __TT__ - Generate project tags file using ctags
+ * __TT__ - Generate project tags file and flush command-t (:!ctags -R && :CommandTFlush)
  * __Leader + ,__ - Hide search highlight (:nohl)
  * __Leader + ev__ - Open user ~/.vimrc file (:edit $MYVIMRC)
  * __Leader + v__ - Reload VIM configuration (:source $MYVIMRC)

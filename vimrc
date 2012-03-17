@@ -148,8 +148,13 @@ endfunction
 " mapping to write commit and push to current branch
 nnoremap gwp :call PushToCurrentBranch()<CR>
 
+
 " mapping to generate tags file
-nnoremap TT :!ctags -R<CR>
+function! FlushEnvironment()
+  exe ":CommandTFlush"
+  exe ":!ctags -R"
+endfunction
+nnoremap TT :call FlushEnvironment()<CR>
 
 if has("eval")
   " custom configuration for surround.vim
