@@ -112,3 +112,6 @@
 [submodule "bundle/flashdevelop.vim"]
 	path = bundle/flashdevelop.vim
 	url = git://github.com/endel/flashdevelop.vim.git
+[submodule "bundle/webapi-vim"]
+	path = bundle/webapi-vim
+	url = https://github.com/mattn/webapi-vim.git
