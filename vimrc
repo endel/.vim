@@ -313,7 +313,7 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 
 " Utilty
-map <S-C-s> :Gstatus<CR>
+" map <S-C>s :Gstatus<CR>
 
 "map <F3>    :cnext<CR>
 "map <F4>    :cc<CR>
@@ -378,6 +378,6 @@ autocmd BufNewFile,BufRead *.py setlocal nosmartindent
 "
 autocmd Bufread,BufNewFile *.proto set filetype=javascript
 
-" ctags
-let tlist_tex_settings          = 'latex;s:sections;g:graphics;l:labels'
-let tlist_make_settings         = 'make;m:makros;t:targets'
+" TagList plugin configuration
+" let tlist_tex_settings          = 'latex;s:sections;g:graphics;l:labels'
+" let tlist_make_settings         = 'make;m:makros;t:targets'
