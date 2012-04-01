@@ -14,8 +14,18 @@ call pathogen#helptags()
 
 " colors and style
 syntax enable
-set guifont=Inconsolata:h14
-set lsp=3
+
+" Set font accourding to OS
+if has('gui_macvim')
+  set guifont=Inconsolata:h14
+elseif has('gui_gtk') || has('gui_gtk2')
+  set guifont="Ubuntu Mono":h14
+elseif has('gui_win32')
+  set guifont="Consolas":h14
+else
+  set guifont="Courier New":h14
+endif
+set linespace=3
 
 "set background=light
 set background=dark
