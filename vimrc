@@ -161,10 +161,10 @@ nnoremap gwp :call PushToCurrentBranch()<CR>
 
 " mapping to generate tags file
 function! FlushEnvironment()
-  exe ":CommandTFlush"
-  exe ":!ctags -R"
+  silent! exe ":CommandTFlush"
+  silent! exe ":!ctags -R"
 endfunction
-nnoremap TT :call FlushEnvironment()<CR>
+silent! nnoremap <silent> TT :call FlushEnvironment()<CR>
 
 if has("eval")
   " custom configuration for surround.vim
