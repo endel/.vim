@@ -279,6 +279,8 @@ map <Leader><Tab> :b#<CR>
 " Leader + n: New buffer
 map <Leader>n :new<CR>
 
+map <D-r> :e<CR>
+
 "Key mapping for textmate-like indentation
 nmap <D-[> <<
 nmap <D-]> >>
