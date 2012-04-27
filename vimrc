@@ -84,7 +84,8 @@ endif
 "
 " Plugin customizations
 "
-let g:bufExplorerShowRelativePath=1     " relative paths for buffer explorer
+let g:bufExplorerShowTabBuffer=1        " BufExplorer: show only buffers relative to this tab
+let g:bufExplorerShowRelativePath=1     " BufExplorer: show relative paths
 let g:neocomplcache_enable_at_startup=1 " enable neocomplcache
 let g:Powerline_symbols='fancy'         " fancy statusline
 
