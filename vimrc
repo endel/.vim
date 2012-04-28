@@ -84,23 +84,21 @@ endif
 "
 " Plugin customizations
 "
+let g:snips_trigger_key = '<c-space>'   " SnipMate: remap to Ctrl + Space
 let g:bufExplorerShowTabBuffer=1        " BufExplorer: show only buffers relative to this tab
 let g:bufExplorerShowRelativePath=1     " BufExplorer: show relative paths
-let g:neocomplcache_enable_at_startup=1 " enable neocomplcache
-let g:Powerline_symbols='fancy'         " fancy statusline
+let g:neocomplcache_enable_at_startup=1 " NeoComplCache: enable at startup
+let g:Powerline_symbols='fancy'         " Powerline: fancy statusline (patched font)
 
 " NERDTree
 let NERDTreeChDirMode=2
 let g:NERDTreeMinimalUI=1
 
-" CommandT for filetype
+" CommandT for filetype (works only with https://github.com/endel/Command-T)
 silent! nnoremap <unique> <silent> <Leader>f :CommandTFiletype<CR>
 
 " CommandT for tags
 silent! nnoremap <unique> <silent> <Leader>T :CommandTTag<CR>
-
-" Snipmate:
-"let g:snips_trigger_key = '<D-+>'
 
 " TODO: WTF how can I customize this?
 "let g:snipMate['scope_aliases'] = {'objc' :'c'
