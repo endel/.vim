@@ -115,3 +115,18 @@
 [submodule "bundle/Command-T"]
 	path = bundle/Command-T
 	url = git@github.com:endel/Command-T.git
+[submodule "bundle/color-railscasts"]
+	path = bundle/color-railscasts
+	url = https://github.com/jpo/vim-railscasts-theme.git
+[submodule "bundle/color-lucius"]
+	path = bundle/color-lucius
+	url = https://github.com/vim-scripts/Lucius.git
+[submodule "bundle/color-sexy-railscasts"]
+	path = bundle/color-sexy-railscasts
+	url = https://github.com/oguzbilgic/sexy-railscasts-theme.git
+[submodule "bundle/ctrlp"]
+	path = bundle/ctrlp
+	url = https://github.com/kien/ctrlp.vim.git
+[submodule "bundle/ctrlp-filetype"]
+	path = bundle/ctrlp-filetype
+	url = https://github.com/endel/ctrlp-filetype.vim.git

@@ -16,10 +16,11 @@ Plugins flagged with * needs attention to setup, just follow what README file of
 It's recommended to you to read how to use each of the listed plugins below.
 
  * [* ack](https://github.com/mileszs/ack.vim)
- * [* Command-T](https://github.com/wincent/Command-T)
  * [* gist-vim](https://github.com/mattn/gist-vim)
  * [* vim-powerline](https://github.com/Lokaltog/vim-powerline) - you can install the patched *Iconsolata* font at <code>utils</code> directory.
  * [* flashdevelop](https://github.com/endel/flashdevelop.vim)
+ * [ctrlp](https://github.com/kien/ctrlp.vim)
+ * [ctrlp-filetype](https://github.com/endel/ctrlp-filetype)
  * [vim-fugitive](https://github.com/tpope/vim-fugitive)
  * [syntastic](https://github.com/scrooloose/syntastic)
  * [javascript](https://github.com/pangloss/vim-javascript)

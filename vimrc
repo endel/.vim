@@ -84,21 +84,38 @@ endif
 "
 " Plugin customizations
 "
-let g:snips_trigger_key = '<c-space>'   " SnipMate: remap to Ctrl + Space
-let g:bufExplorerShowTabBuffer=1        " BufExplorer: show only buffers relative to this tab
-let g:bufExplorerShowRelativePath=1     " BufExplorer: show relative paths
-let g:neocomplcache_enable_at_startup=1 " NeoComplCache: enable at startup
-let g:Powerline_symbols='fancy'         " Powerline: fancy statusline (patched font)
+let g:snips_trigger_key = '<c-space>'      " SnipMate: remap to Ctrl + Space
+let g:bufExplorerShowTabBuffer=1           " BufExplorer: show only buffers relative to this tab
+let g:bufExplorerShowRelativePath=1        " BufExplorer: show relative paths
+let g:neocomplcache_enable_at_startup=1    " NeoComplCache: enable at startup
+let g:Powerline_symbols='fancy'            " Powerline: fancy statusline (patched font)
+
+let g:ctrlp_working_path_mode = 2          " CtrlP: use the nearest ancestor that contains one of these directories or files: .git/ .hg/ .svn/ .bzr/ _darcs/
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip   " MacOSX/Linux
+" set wildignore+=tmp\*,*.swp,*.zip,*.exe    " Windows
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\.git$\|\.hg$\|\.svn$',
+    \ 'file': '\.pyc$\|\.pyo$\|\.rbc$|\.rbo$\|\.class$\|\.o$\|\~$\',
+    \ }
+let g:ctrlp_extensions = [
+   \ 'ctrlp-filetpe',
+   \ ]
 
 " NERDTree
 let NERDTreeChDirMode=2
 let g:NERDTreeMinimalUI=1
 
-" CommandT for filetype (works only with https://github.com/endel/Command-T)
-silent! nnoremap <unique> <silent> <Leader>f :CommandTFiletype<CR>
+" CtrlP familiar to Command-T
+silent! nnoremap <unique> <silent> <Leader>t :CtrlP<CR>
 
-" CommandT for tags
-silent! nnoremap <unique> <silent> <Leader>T :CommandTTag<CR>
+" CtrlP for buffers
+silent! nnoremap <unique> <silent> <Leader>b :CtrlPBuffer<CR>
+
+" CtrlP for tags
+silent! nnoremap <unique> <silent> <Leader>T :CtrlPTag<CR>
+
+" CtrlP for filetype
+silent! nnoremap <unique> <silent> <Leader>f :CtrlPFiletype<CR>
 
 " TODO: WTF how can I customize this?
 "let g:snipMate['scope_aliases'] = {'objc' :'c'
@@ -368,16 +385,12 @@ if has("autocmd")
 endif
 
 "
-" ActionScript:
-" - Indentation compatible with most IDE's default configuration
-"
 " JavaScript: 
 " - Indentation compatible with default JSLint config: http://www.jslint.com/
 "
-autocmd FileType actionscript setlocal expandtab
-autocmd FileType actionscript,javascript setlocal tabstop=4
-autocmd FileType actionscript,javascript setlocal shiftwidth=4
-autocmd FileType actionscript,javascript setlocal softtabstop=4
+autocmd FileType javascript setlocal tabstop=4
+autocmd FileType javascript setlocal shiftwidth=4
+autocmd FileType javascript setlocal softtabstop=4
 
 " 
 " Python: Better indentation
