@@ -96,10 +96,12 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip   " MacOSX/Linux
 let g:ctrlp_custom_ignore = {
     \ 'dir':  '\.git$\|\.hg$\|\.svn$',
     \ 'file': '\.pyc$\|\.pyo$\|\.rbc$|\.rbo$\|\.class$\|\.o$\|\~$\',
+    \ 'link': 'some_bad_symbolic_links',
     \ }
 let g:ctrlp_extensions = [
    \ 'ctrlp-filetpe',
    \ ]
+let g:ctrlp_follow_symlinks = 1
 
 " NERDTree
 let NERDTreeChDirMode=2
