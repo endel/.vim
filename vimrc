@@ -174,10 +174,8 @@ endfunction
 " mapping to write commit and push to current branch
 nnoremap gwp :call PushToCurrentBranch()<CR>
 
-
 " mapping to generate tags file
 function! FlushEnvironment()
-  silent! exe ":CommandTFlush"
   silent! exe ":!ctags -R"
 endfunction
 silent! nnoremap <silent> TT :call FlushEnvironment()<CR>
@@ -341,7 +339,7 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 
 " Utilty
-" map <S-C>s :Gstatus<CR>
+map <silent> <Leader>s :Gstatus<CR>
 
 "map <F3>    :cnext<CR>
 "map <F4>    :cc<CR>

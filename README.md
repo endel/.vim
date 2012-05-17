@@ -20,7 +20,7 @@ It's recommended to you to read how to use each of the listed plugins below.
  * [* vim-powerline](https://github.com/Lokaltog/vim-powerline) - you can install the patched *Iconsolata* font at <code>utils</code> directory.
  * [* flashdevelop](https://github.com/endel/flashdevelop.vim)
  * [ctrlp](https://github.com/kien/ctrlp.vim)
- * [ctrlp-filetype](https://github.com/endel/ctrlp-filetype)
+ * [ctrlp-filetype](https://github.com/endel/ctrlp-filetype.vim)
  * [vim-fugitive](https://github.com/tpope/vim-fugitive)
  * [syntastic](https://github.com/scrooloose/syntastic)
  * [javascript](https://github.com/pangloss/vim-javascript)
@@ -61,14 +61,14 @@ Custom key mapping
 Miscellaneous:
 
  * __Y__ - Yank all characters after current cursor position (y$)
- * __TT__ - Generate project tags file and flush command-t (:!ctags -R && :CommandTFlush)
+ * __TT__ - Generate project tags file
  * __Leader + ,__ - Hide search highlight (:nohl)
  * __Leader + ev__ - Open user ~/.vimrc file (:edit $MYVIMRC)
  * __Leader + v__ - Reload VIM configuration (:source $MYVIMRC)
 
 Git / Commiting:
 
- * __Ctrl + Shift + S__ - Open git status interface (:Gstatus)
+ * __Leader + s__ - Open git status interface (:Gstatus)
  * __gwp__ - Write commit file and push to current branch (:Gwrite | Git push origin [currentbranch])
 
 Diff:
