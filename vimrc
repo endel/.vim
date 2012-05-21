@@ -47,7 +47,8 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
-set list listchars=tab:\ \ ,trail:·
+set list listchars=tab:▸–,trail:·,nbsp:¬
+"eol:¶
 
 " searching
 set hlsearch
@@ -87,7 +88,6 @@ endif
 let g:snips_trigger_key = '<c-space>'      " SnipMate: remap to Ctrl + Space
 let g:bufExplorerShowTabBuffer=1           " BufExplorer: show only buffers relative to this tab
 let g:bufExplorerShowRelativePath=1        " BufExplorer: show relative paths
-let g:neocomplcache_enable_at_startup=1    " NeoComplCache: enable at startup
 let g:Powerline_symbols='fancy'            " Powerline: fancy statusline (patched font)
 
 let g:ctrlp_working_path_mode = 2          " CtrlP: use the nearest ancestor that contains one of these directories or files: .git/ .hg/ .svn/ .bzr/ _darcs/
@@ -144,6 +144,22 @@ endif
 if v:version >= 700
   set viminfo=!,'20,<50,s10,h
 endif
+
+" Return a command output for a vimscript
+" extracted from lh-vim: http://code.google.com/p/lh-vim/source/browse/vim-lib/trunk/autoload/lh/askvim.vim#57
+function! Askvim_exe(command)
+  let save_a = @a
+  try
+    silent! redir @a
+    silent! exe a:command
+    redir END
+  finally
+    " Always restore everything
+    let res = @a
+    let @a = save_a
+    return res
+  endtry
+endfunction
 
 " By Tim Pope
 function! OpenURL(url)
@@ -278,7 +294,6 @@ if has("eval")
     endtry
   endfunction
   command! -bar Run :execute Run()
-
 endif
 
 "
@@ -378,21 +393,32 @@ endif
 map <Leader>ev :edit $MYVIMRC<CR>
 map <Leader>v :source $MYVIMRC<CR>
 
-if has("autocmd")
-  " remember last location in file
-  autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
-    \| exe "normal g'\"" | endif
-endif
+" remember last location when open a file
+"
+autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+      \| exe "normal g'\"" | endif
+
+" remove whitespaces before writing a file
+"
+function! RemoveWhitespaces()
+  let has_whitespaces = Askvim_exe('%s/\s\+$//en')
+  if strlen(has_whitespaces) > 0
+    exe('%s/\s\+$//e')
+    exe feedkeys('``')
+  endif
+endfunction
+command! RemoveWhitespaces :call RemoveWhitespaces()
+autocmd BufWritePre * :call RemoveWhitespaces()
 
 "
-" JavaScript: 
+" JavaScript:
 " - Indentation compatible with default JSLint config: http://www.jslint.com/
 "
 autocmd FileType javascript setlocal tabstop=4
 autocmd FileType javascript setlocal shiftwidth=4
 autocmd FileType javascript setlocal softtabstop=4
 
-" 
+"
 " Python: Better indentation
 "
 autocmd BufNewFile,BufRead *.py setlocal nosmartindent
