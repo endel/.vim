@@ -45,7 +45,7 @@ It's recommended to you to read how to use each of the listed plugins below.
  * [vim-rooter](https://github.com/airblade/vim-rooter)
  * [snipmate-snippets](https://github.com/honza/snipmate-snippets)
  * [nerdcommenter](https://github.com/scrooloose/nerdcommenter)
- * [neocomplcache](https://github.com/Shougo/neocomplcache)
+ * [AutoTag](https://github.com/vim-scripts/AutoTag)
  * [supertab](https://github.com/ervandew/supertab)
  * [a](https://github.com/vim-scripts/a.vim)
 
