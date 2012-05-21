@@ -65,6 +65,7 @@ Miscellaneous:
  * __Leader + ,__ - Hide search highlight (:nohl)
  * __Leader + ev__ - Open user ~/.vimrc file (:edit $MYVIMRC)
  * __Leader + v__ - Reload VIM configuration (:source $MYVIMRC)
+ * __Shift + Space__ - Remove trailing whitespaces.
 
 Git / Commiting:
 

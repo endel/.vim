@@ -192,6 +192,17 @@ endfunction
 " mapping to write commit and push to current branch
 nnoremap gwp :call PushToCurrentBranch()<CR>
 
+" remove whitespaces before writing a file
+function! <SID>RemoveWhitespaces()
+  let l = line(".")
+  let c = col(".")
+  execute '%s/\s\+$//e'
+  call cursor(l, c)
+endfunction
+
+" mapping to remove whitespaces
+nnoremap <silent> <S-Space> :call <SID>RemoveWhitespaces()<CR>
+
 " mapping to generate tags file
 function! FlushEnvironment()
   silent! exe ":!ctags -R"
@@ -398,17 +409,7 @@ map <Leader>v :source $MYVIMRC<CR>
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
       \| exe "normal g'\"" | endif
 
-" remove whitespaces before writing a file
-"
-function! RemoveWhitespaces()
-  let has_whitespaces = Askvim_exe('%s/\s\+$//en')
-  if strlen(has_whitespaces) > 0
-    exe('%s/\s\+$//e')
-    exe feedkeys('``')
-  endif
-endfunction
-command! RemoveWhitespaces :call RemoveWhitespaces()
-autocmd BufWritePre * :call RemoveWhitespaces()
+autocmd BufWritePre * :call <SID>RemoveWhitespaces()
 
 "
 " JavaScript:
