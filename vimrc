@@ -17,13 +17,13 @@ syntax enable
 
 " Set font accourding to OS
 if has('gui_macvim')
-  set guifont=Inconsolata:h14
+  set guifont=Menlo:h15
 elseif has('gui_gtk') || has('gui_gtk2')
-  set guifont="Ubuntu Mono":h14
+  set guifont="Ubuntu Mono":h15
 elseif has('gui_win32')
-  set guifont="Consolas":h14
+  set guifont="Consolas":h15
 else
-  set guifont="Courier New":h14
+  set guifont="Courier New":h15
 endif
 set linespace=3
 
@@ -184,8 +184,8 @@ nnoremap gW :OpenURL http://en.wikipedia.org/wiki/Special:Search?search=<cword><
 " Write COMMIT_EDITMSG and push to current branch
 function! PushToCurrentBranch()
   exe ":Gwrite"
-	let branch = fugitive#statusline()
-	let branch = substitute(branch, '\c\v\[?GIT\(([a-z0-9\-_\./:]+)\)\]?', $BRANCH.' \1', 'g')
+  let branch = fugitive#statusline()
+  let branch = substitute(branch, '\c\v\[?GIT\(([a-z0-9\-_\./:]+)\)\]?', $BRANCH.' \1', 'g')
   exe ":Git push origin" . branch
 endfunction
 
@@ -312,9 +312,6 @@ endif
 " ------------------
 "
 
-" Avoid you pressing shift every time to enter on cmdline mode.
-"nnoremap ; :
-
 " Leader + Tab: Switching to the previously edited buffer
 map <Leader><Tab> :b#<CR>
 
@@ -336,8 +333,6 @@ nmap <C-s> :w<CR>
 map <Leader>l :NERDTreeToggle<CR>
 " Open NERDTree
 map <Leader>L :NERDTree<CR>
-" Toggle NERDTree
-map <Leader>c :TlistToggle<CR>
 
 " ack.vim
 nmap <silent> <unique> <Leader>a :Ack
@@ -397,7 +392,7 @@ noremap <S-D-CR> :only <CR>
 
 " Hide search highlight
 if exists(":nohls")
-  nmap <silent><Leader>, :nohls<CR>
+  map <silent><Leader>, :nohls<CR>
 endif
 
 " Open .vimrc for quick-edit.
