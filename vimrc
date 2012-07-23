@@ -85,7 +85,7 @@ endif
 "
 " Plugin customizations
 "
-let g:snips_trigger_key = '<c-space>'      " SnipMate: remap to Ctrl + Space
+" let g:snips_trigger_key = '<c-space>'      " SnipMate: remap to Ctrl + Space
 let g:bufExplorerShowTabBuffer=1           " BufExplorer: show only buffers relative to this tab
 let g:bufExplorerShowRelativePath=1        " BufExplorer: show relative paths
 let g:Powerline_symbols='fancy'            " Powerline: fancy statusline (patched font)
