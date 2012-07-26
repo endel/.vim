@@ -57,7 +57,7 @@
 	url = https://github.com/Raimondi/delimitMate/
 [submodule "bundle/vim-git"]
 	path = bundle/vim-git
-	url = https://github.com/tpope/vim-git
+	url = https://github.com/tpope/vim-git.git
 [submodule "bundle/bufexplorer"]
 	path = bundle/bufexplorer
 	url = https://github.com/corntrace/bufexplorer.git

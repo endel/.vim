@@ -17,7 +17,7 @@ syntax enable
 
 " Set font accourding to OS
 if has('gui_macvim')
-  set guifont=Menlo:h15
+  set guifont=Menlo:h13
 elseif has('gui_gtk') || has('gui_gtk2')
   set guifont="Ubuntu Mono":h15
 elseif has('gui_win32')
