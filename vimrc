@@ -131,6 +131,9 @@ silent! nnoremap <unique> <silent> <Leader>f :CtrlPFiletype<CR>
     "\ ,'eruby': 'eruby,eruby-rails,html'
     "\ }
 
+" Open tags in a new tab
+nmap <C-Enter> <C-w><C-]><C-w>T
+
 " Easy diffget on a 3-way diff
 nnoremap dgh :diffget //2 \| diffupdate <CR>
 nnoremap dgl :diffget //3 \| diffupdate <CR>
@@ -405,6 +408,14 @@ autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
       \| exe "normal g'\"" | endif
 
 autocmd BufWritePre * :call <SID>RemoveWhitespaces()
+
+"
+" Ruby
+" - Allow to browser through gem ctags
+"
+"autocmd FileType ruby let &l:tags = pathogen#legacyjoin(pathogen#uniq(
+      "\ pathogen#split(&tags) +
+      "\ map(split($GEM_PATH,':'),'v:val."/gems/*/tags"')))
 
 "
 " JavaScript:

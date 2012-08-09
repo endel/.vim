@@ -9,7 +9,7 @@
 	url = https://github.com/tpope/vim-repeat.git
 [submodule "bundle/vim-bundler"]
 	path = bundle/vim-bundler
-	url = https://github.com/tpope/vim-bundler.git
+	url = git://github.com/tpope/vim-bundler.git
 [submodule "bundle/vim-matchit"]
 	path = bundle/vim-matchit
 	url = https://github.com/tsaleh/vim-matchit.git
@@ -129,4 +129,10 @@
 	url = https://github.com/vim-scripts/AutoTag.git
 [submodule "bundle/vim-coffee-script"]
 	path = bundle/vim-coffee-script
-	url = https://github.com/kchmck/vim-coffee-script.git
+	url = git://github.com/kchmck/vim-coffee-script.git
+[submodule "bundle/vim-ruby-conque"]
+	path = bundle/vim-ruby-conque
+	url = git://github.com/skwp/vim-ruby-conque.git
+[submodule "bundle/vim-conque"]
+	path = bundle/vim-conque
+	url = git://github.com/rson/vim-conque.git
