@@ -29,7 +29,7 @@ set linespace=3
 
 "set background=light
 set background=dark
-colorscheme jellybeans
+colorscheme Tomorrow-Night
 "colorscheme solarized
 "colorscheme github
 "colorscheme vividchalk
