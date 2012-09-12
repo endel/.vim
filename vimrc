@@ -29,7 +29,7 @@ set linespace=3
 
 "set background=light
 set background=dark
-colorscheme Tomorrow-Night
+colorscheme Tomorrow-Night-Bright
 "colorscheme solarized
 "colorscheme github
 "colorscheme vividchalk
@@ -137,6 +137,26 @@ nmap <C-Enter> <C-w><C-]><C-w>T
 " Easy diffget on a 3-way diff
 nnoremap dgh :diffget //2 \| diffupdate <CR>
 nnoremap dgl :diffget //3 \| diffupdate <CR>
+
+" Add '|' text objects
+nnoremap di\| T\|d,
+nnoremap da\| F\|d,
+nnoremap ci\| T\|c,
+nnoremap ca\| F\|c,
+nnoremap yi\| T\|y,
+nnoremap ya\| F\|y,
+nnoremap vi\| T\|v,
+nnoremap va\| F\|v,
+
+" Add '/' text objects
+nnoremap di/ T/d,
+nnoremap da/ F/d,
+nnoremap ci/ T/c,
+nnoremap ca/ F/c,
+nnoremap yi/ T/y,
+nnoremap ya/ F/y,
+nnoremap vi/ T/v,
+nnoremap va/ F/v,
 
 " Change root directory on buffer enter
 autocmd BufEnter * :Rooter

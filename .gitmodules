@@ -117,7 +117,7 @@
 	url = https://github.com/vim-scripts/Lucius.git
 [submodule "bundle/color-sexy-railscasts"]
 	path = bundle/color-sexy-railscasts
-	url = https://github.com/oguzbilgic/sexy-railscasts-theme.git
+	url = https://github.com/bullfight/sexy-railscasts-theme.git
 [submodule "bundle/ctrlp"]
 	path = bundle/ctrlp
 	url = https://github.com/kien/ctrlp.vim.git
@@ -139,3 +139,6 @@
 [submodule "bundle/color-tomorrow-theme"]
 	path = bundle/color-tomorrow-theme
 	url = https://github.com/chriskempson/vim-tomorrow-theme.git
+[submodule "bundle/color-obsidian"]
+	path = bundle/color-obsidian
+	url = https://github.com/tjohn/vim-obsidian.git
