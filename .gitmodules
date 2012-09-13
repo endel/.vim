@@ -142,3 +142,6 @@
 [submodule "bundle/color-obsidian"]
 	path = bundle/color-obsidian
 	url = https://github.com/tjohn/vim-obsidian.git
+[submodule "bundle/php"]
+	path = bundle/php
+	url = https://github.com/StanAngeloff/php.vim.git
