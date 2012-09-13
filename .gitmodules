@@ -25,9 +25,6 @@
 [submodule "bundle/vim-fugitive"]
 	path = bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
-[submodule "bundle/vim-php"]
-	path = bundle/vim-php
-	url = https://github.com/madflow/vim-php.git
 [submodule "bundle/vim-rails"]
 	path = bundle/vim-rails
 	url = https://github.com/tpope/vim-rails.git
@@ -139,9 +136,6 @@
 [submodule "bundle/color-tomorrow-theme"]
 	path = bundle/color-tomorrow-theme
 	url = https://github.com/chriskempson/vim-tomorrow-theme.git
-[submodule "bundle/color-obsidian"]
-	path = bundle/color-obsidian
-	url = https://github.com/tjohn/vim-obsidian.git
 [submodule "bundle/php"]
 	path = bundle/php
 	url = https://github.com/StanAngeloff/php.vim.git
