@@ -103,6 +103,9 @@ let g:ctrlp_extensions = [
    \ ]
 let g:ctrlp_follow_symlinks = 1
 
+" Rooter patterns for identifying root path
+let g:rooter_patterns = ['tags', '.git', '.git/', '_darcs/', '.hg/', '.bzr/', '.svn/']
+
 " NERDTree
 let NERDTreeChDirMode=2
 let g:NERDTreeMinimalUI=1
