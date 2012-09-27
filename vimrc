@@ -441,14 +441,6 @@ autocmd BufWritePre * :call <SID>RemoveWhitespaces()
       "\ map(split($GEM_PATH,':'),'v:val."/gems/*/tags"')))
 
 "
-" JavaScript:
-" - Indentation compatible with default JSLint config: http://www.jslint.com/
-"
-autocmd FileType javascript setlocal tabstop=4
-autocmd FileType javascript setlocal shiftwidth=4
-autocmd FileType javascript setlocal softtabstop=4
-
-"
 " Python: Better indentation
 "
 autocmd BufNewFile,BufRead *.py setlocal nosmartindent
