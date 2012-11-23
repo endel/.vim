@@ -18,7 +18,7 @@ syntax enable
 
 " Set font accourding to OS
 if has('gui_macvim')
-  set guifont=Monaco:h13
+  set guifont=Monaco:h12
 elseif has('gui_gtk') || has('gui_gtk2')
   set guifont="Ubuntu Mono":h15
 elseif has('gui_win32')
@@ -73,6 +73,7 @@ set printoptions=paper:letter
 set foldmethod=marker
 
 set laststatus=2          " Always show status line
+set nofoldenable          " Folding sucks
 
 " Use different colorscheme when are using GUI or console
 if has("gui_running")
@@ -106,6 +107,12 @@ let g:ctrlp_follow_symlinks = 1
 
 " Rooter patterns for identifying root path
 let g:rooter_patterns = ['tags', '.git', '.git/', '_darcs/', '.hg/', '.bzr/', '.svn/']
+
+" Syntastic
+let g:syntastic_error_symbol = '✗'
+let g:syntastic_style_error_symbol = '✠'
+let g:syntastic_warning_symbol = '∆'
+let g:syntastic_style_warning_symbol = '≈'
 
 " NERDTree
 let NERDTreeChDirMode=2
@@ -219,6 +226,13 @@ endfunction
 " mapping to write commit and push to current branch
 nnoremap gwp :call PushToCurrentBranch()<CR>
 
+" By Endel Dreyer
+" Get buffer size in bytes
+function! s:BufferByteSize()
+  echo printf("%s %s", line2byte(line('$') + 1), "bytes")
+endfunction
+command! Bytes call s:BufferByteSize()
+
 " remove whitespaces before writing a file
 function! <SID>RemoveWhitespaces()
   let l = line(".")
@@ -236,103 +250,88 @@ function! FlushEnvironment()
 endfunction
 silent! nnoremap <silent> TT :call FlushEnvironment()<CR>
 
-if has("eval")
-  " custom configuration for surround.vim
-  let g:surround_{char2nr('-')} = "<% \r %>"
-  let g:surround_{char2nr('=')} = "<%= \r %>"
-  let g:surround_{char2nr('8')} = "/* \r */"
-  let g:surround_{char2nr('s')} = " \r"
-  let g:surround_{char2nr('^')} = "/^\r$/"
-  let g:surround_indent = 1
+" custom configuration for surround.vim
+let g:surround_{char2nr('-')} = "<% \r %>"
+let g:surround_{char2nr('=')} = "<%= \r %>"
+let g:surround_{char2nr('8')} = "/* \r */"
+let g:surround_{char2nr('s')} = " \r"
+let g:surround_{char2nr('^')} = "/^\r$/"
+let g:surround_indent = 1
 
-  " used for statusline
-  function! SL(function)
-    if exists('*'.a:function)
-      return call(a:function,[])
-    else
-      return ''
-    endif
-  endfunction
-
-  " Mapped to F9
-  function! Run()
-    let old_makeprg = &makeprg
-    let old_errorformat = &errorformat
-    try
-      let cmd = matchstr(getline(1),'^#!\zs[^ ]*')
-      if exists('b:run_command')
-        exe b:run_command
-      elseif cmd != '' && executable(cmd)
-        wa
-        let &makeprg = matchstr(getline(1),'^#!\zs.*').' %'
+" Mapped to F9
+function! Run()
+  let old_makeprg = &makeprg
+  let old_errorformat = &errorformat
+  try
+    if &ft == 'javascript'
+      compiler jsc
+      make %
+    elseif &ft == 'mail' || &ft == 'text' || &ft == 'help' || &ft == 'gitcommit'
+      setlocal spell!
+    elseif exists('b:rails_root') && exists(':Rake')
+      wa
+      Rake
+    elseif &ft == 'cucumber'
+      wa
+      compiler cucumber
+      make %
+    elseif &ft == 'ruby'
+      wa
+      if executable(expand('%:p')) || getline(1) =~ '^#!'
+        compiler ruby
+        let &makeprg = 'ruby'
+        make %
+      elseif expand('%:t') =~ '_test\.rb$'
+        compiler rubyunit
+        let &makeprg = 'ruby'
+        make %
+      elseif expand('%:t') =~ '_spec\.rb$'
+        compiler rspec
+        let &makeprg = 'rspec'
+        make %
+      elseif &makeprg ==# 'bundle'
         make
-      elseif &ft == 'mail' || &ft == 'text' || &ft == 'help' || &ft == 'gitcommit'
-        setlocal spell!
-      elseif exists('b:rails_root') && exists(':Rake')
-        wa
-        Rake
-      elseif &ft == 'cucumber'
-        wa
-        compiler cucumber
-        make %
-      elseif &ft == 'ruby'
-        wa
-        if executable(expand('%:p')) || getline(1) =~ '^#!'
-          compiler ruby
-          let &makeprg = 'ruby'
-          make %
-        elseif expand('%:t') =~ '_test\.rb$'
-          compiler rubyunit
-          let &makeprg = 'ruby'
-          make %
-        elseif expand('%:t') =~ '_spec\.rb$'
-          compiler rspec
-          let &makeprg = 'rspec'
-          make %
-        elseif &makeprg ==# 'bundle'
-          make
-        elseif executable('pry') && exists('b:rake_root')
-          execute '!pry -I"'.b:rake_root.'/lib" -r"%:p"'
-        elseif executable('pry')
-          !pry -r"%:p"
-        else
-          !irb -r"%:p"
-        endif
-      elseif &ft == 'html' || &ft == 'xhtml' || &ft == 'php' || &ft == 'aspvbs' || &ft == 'aspperl'
-        wa
-        if !exists('b:url')
-          call OpenURL(expand('%:p'))
-        else
-          call OpenURL(b:url)
-        endif
-      elseif &ft == 'vim'
-        w
-        unlet! g:loaded_{expand('%:t:r')}
-        return 'source %'
-      elseif &ft == 'sql'
-        1,$DBExecRangeSQL
-      elseif expand('%:e') == 'tex'
-        wa
-        exe "normal :!rubber -f %:r && xdvi %:r >/dev/null 2>/dev/null &\<CR>"
-      elseif &ft == 'dot'
-        let &makeprg = 'dotty'
-        make %
+      elseif executable('pry') && exists('b:rake_root')
+        execute '!pry -I"'.b:rake_root.'/lib" -r"%:p"'
+      elseif executable('pry')
+        !pry -r"%:p"
       else
-        wa
-        if &makeprg =~ '%'
-          make
-        else
-          make %
-        endif
+        !irb -r"%:p"
       endif
-      return ''
-    finally
-      let &makeprg = old_makeprg
-      let &errorformat = old_errorformat
-    endtry
-  endfunction
-  command! -bar Run :execute Run()
-endif
+    elseif &ft == 'html' || &ft == 'xhtml' || &ft == 'php' || &ft == 'aspvbs' || &ft == 'aspperl'
+      wa
+      if !exists('b:url')
+        call OpenURL(expand('%:p'))
+      else
+        call OpenURL(b:url)
+      endif
+    elseif &ft == 'vim'
+      w
+      unlet! g:loaded_{expand('%:t:r')}
+      return 'source %'
+    elseif &ft == 'sql'
+      1,$DBExecRangeSQL
+    elseif expand('%:e') == 'tex'
+      wa
+      exe "normal :!rubber -f %:r && xdvi %:r >/dev/null 2>/dev/null &\<CR>"
+    elseif &ft == 'dot'
+      let &makeprg = 'dotty'
+      make %
+    else
+      wa
+      if &makeprg =~ '%'
+        make
+      else
+        make %
+      endif
+    endif
+    return ''
+  finally
+    let &makeprg = old_makeprg
+    let &errorformat = old_errorformat
+  endtry
+endfunction
+command! -bar Run :execute Run()
 
 "
 " Custom key mapping
@@ -432,6 +431,11 @@ autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
       \| exe "normal g'\"" | endif
 
 autocmd BufWritePre * :call <SID>RemoveWhitespaces()
+
+"
+" check spelling when writing commit logs
+"
+autocmd filetype gitcommit setlocal spell
 
 "
 " Ruby
