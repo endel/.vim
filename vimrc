@@ -416,6 +416,8 @@ map <C-n> :bnext<CR>
 " Expand current buffer with Command + Shift + Return
 noremap <S-D-CR> :only <CR>
 
+set pastetoggle=<F2>
+
 " Hide search highlight
 if exists(":nohls")
   map <silent><Leader>, :nohls<CR>
@@ -426,33 +428,28 @@ map <Leader>ev :edit $MYVIMRC<CR>
 map <Leader>v :source $MYVIMRC<CR>
 
 " remember last location when open a file
-"
 autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
       \| exe "normal g'\"" | endif
 
+" Remove white spaces on write
 autocmd BufWritePre * :call <SID>RemoveWhitespaces()
 
-"
-" check spelling when writing commit logs
-"
-autocmd filetype gitcommit setlocal spell
+" Git commits: check word spelling
+autocmd FileType gitcommit setlocal spell
 
-"
 " Ruby
 " - Allow to browser through gem ctags
-"
 "autocmd FileType ruby let &l:tags = pathogen#legacyjoin(pathogen#uniq(
       "\ pathogen#split(&tags) +
       "\ map(split($GEM_PATH,':'),'v:val."/gems/*/tags"')))
 
-"
 " Python: Better indentation
-"
 autocmd BufNewFile,BufRead *.py setlocal nosmartindent
 
-"
+" TXT files
+autocmd FileType text,markdown setlocal linebreak nowrap textwidth=80
+
 " Google protocol buffers
-"
 autocmd Bufread,BufNewFile *.proto set filetype=javascript
 
 " TagList plugin configuration
