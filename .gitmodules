@@ -127,12 +127,6 @@
 [submodule "bundle/vim-coffee-script"]
 	path = bundle/vim-coffee-script
 	url = git://github.com/kchmck/vim-coffee-script.git
-[submodule "bundle/vim-ruby-conque"]
-	path = bundle/vim-ruby-conque
-	url = git://github.com/skwp/vim-ruby-conque.git
-[submodule "bundle/vim-conque"]
-	path = bundle/vim-conque
-	url = git://github.com/rson/vim-conque.git
 [submodule "bundle/color-tomorrow-theme"]
 	path = bundle/color-tomorrow-theme
 	url = https://github.com/chriskempson/vim-tomorrow-theme.git
@@ -148,3 +142,6 @@
 [submodule "bundle/vim-slim"]
 	path = bundle/vim-slim
 	url = git://github.com/bbommarito/vim-slim.git
+[submodule "bundle/gundo"]
+	path = bundle/gundo
+	url = http://github.com/sjl/gundo.vim.git

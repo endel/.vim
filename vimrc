@@ -96,8 +96,8 @@ let g:ctrlp_working_path_mode = 2          " CtrlP: use the nearest ancestor tha
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip   " MacOSX/Linux
 " set wildignore+=tmp\*,*.swp,*.zip,*.exe    " Windows
 let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\.git$\|\.hg$\|\.svn$',
-    \ 'file': '\.pyc$\|\.pyo$\|\.rbc$|\.rbo$\|\.class$\|\.o$\|\~$\',
+    \ 'dir':  '\.git$\|\.hg$\|\.svn$\|node_modules',
+    \ 'file': '\.pyc$\|\.pyo$\|\.rbc$|\.rbo$\|\.class$\|\.o$\|\~$\|\.DS_Store',
     \ 'link': 'some_bad_symbolic_links',
     \ }
 let g:ctrlp_extensions = [
@@ -337,6 +337,7 @@ command! -bar Run :execute Run()
 " Custom key mapping
 " ------------------
 "
+nnoremap <Leader> u :GundoToggle<CR>
 
 " Leader + Tab: Switching to the previously edited buffer
 map <Leader><Tab> :b#<CR>
