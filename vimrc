@@ -74,6 +74,7 @@ set foldmethod=marker
 
 set laststatus=2          " Always show status line
 set nofoldenable          " Folding sucks
+set scrolloff=5           " Always shows 5 lines above/below the cursor
 
 " Use different colorscheme when are using GUI or console
 if has("gui_running")
@@ -107,6 +108,10 @@ let g:ctrlp_follow_symlinks = 1
 
 " Rooter patterns for identifying root path
 let g:rooter_patterns = ['tags', '.git', '.git/', '_darcs/', '.hg/', '.bzr/', '.svn/']
+
+" Gundo
+let g:gundo_right = 1
+let g:gundo_help = 0
 
 " Syntastic
 let g:syntastic_error_symbol = '✗'
@@ -337,7 +342,7 @@ command! -bar Run :execute Run()
 " Custom key mapping
 " ------------------
 "
-nnoremap <Leader> u :GundoToggle<CR>
+map <Leader>u :GundoToggle<CR>
 
 " Leader + Tab: Switching to the previously edited buffer
 map <Leader><Tab> :b#<CR>
