@@ -3,6 +3,16 @@ endel/.vim
 
 My awesome VIM configuration. Tested only on MacVim.
 
+Usage pattern
+---
+
+On MacVim, use each tab as a isolated project.
+[vim-rooter](https://github.com/airblade/vim-rooter) plugin will take care of
+you project's root path, and all the others plugins will follow it, such as
+[ctrlp](https://github.com/kien/ctrlp.vim),
+[nerdtree](https://github.com/scrooloose/nerdtree), and
+[bufexplorer](https://github.com/corntrace/bufexplorer), etc.
+
 
 Plugins Setup
 ---
@@ -66,6 +76,7 @@ Miscellaneous:
  * __Leader + ev__ - Open user ~/.vimrc file (:edit $MYVIMRC)
  * __Leader + v__ - Reload VIM configuration (:source $MYVIMRC)
  * __Shift + Space__ - Remove trailing whitespaces.
+ * :Bytes - Get the number of bytes of this buffer. It doesn't need to be saved.
 
 Git / Commiting:
 
@@ -76,7 +87,6 @@ Diff:
 
  * __dgh__ - Get diff from left buffer (:diffget //2 | diffupdate)
  * __dgl__ - Get diff from right buffer (:diffget //3 | diffupdate)
-
 
 Buffers:
 
@@ -91,7 +101,10 @@ Buffers:
 
 Plugins:
 
- * __Leader + T__ - Open CommandT for tags (:CommandTTag)
+ * __Leader + t__ - Open ctrl-p for files (:CtrlP)
+ * __Leader + T__ - Open ctrl-p for tags (:CtrlPTag)
+ * __Leader + f__ - Open ctrl-p for tags (:CtrlPFiletype)
+ * __Leader + b__ - Open ctrl-p for buffers (:CtrlPBuffer)
  * __Leader + l__ - Toggle NERDTree (:NERDTreeToggle)
  * __Leader + L__ - Open new NERDTree buffer (:NERDTree)
  * __Leader + a__ - Run :Ack [pattern]
@@ -110,6 +123,7 @@ Colorschemes
 
 Awesome colorscheme flavors
 
+ * [tomorrow] (https://github.com/chriskempson/vim-tomorrow-theme)
  * [solarized] (https://github.com/altercation/vim-colors-solarized)
  * [jellybeans](https://github.com/nanotech/jellybeans.vim)
  * [vividchalk] (https://github.com/tpope/vim-vividc)
