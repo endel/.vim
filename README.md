@@ -10,7 +10,7 @@ On MacVim, use each tab as a isolated project.
 [vim-rooter](https://github.com/airblade/vim-rooter) plugin will take care of
 you project's root path, and all the others plugins will follow it, such as
 [ctrlp](https://github.com/kien/ctrlp.vim),
-[nerdtree](https://github.com/scrooloose/nerdtree), and
+[nerdtree](https://github.com/scrooloose/nerdtree),
 [bufexplorer](https://github.com/corntrace/bufexplorer), etc.
 
 
