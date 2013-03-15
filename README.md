@@ -1,7 +1,7 @@
 endel/.vim
 ---
 
-My awesome VIM configuration. Tested only on MacVim.
+My awesome VIM configuration.
 
 Usage pattern
 ---
