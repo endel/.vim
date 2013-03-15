@@ -142,3 +142,6 @@
 [submodule "bundle/mustache"]
 	path = bundle/mustache
 	url = git://github.com/juvenn/mustache.vim.git
+[submodule "bundle/gvimfullscreen_win32"]
+	path = bundle/gvimfullscreen_win32
+	url = git://github.com/derekmcloughlin/gvimfullscreen_win32.git

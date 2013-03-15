@@ -2,6 +2,7 @@
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 
 " No compatible with vi. Who cares about vi?
+set encoding=utf8
 set nocompatible
 set shell=zsh
 
@@ -22,7 +23,7 @@ if has('gui_macvim')
 elseif has('gui_gtk') || has('gui_gtk2')
   set guifont="Ubuntu Mono":h15
 elseif has('gui_win32')
-  set guifont="Consolas":h15
+  set guifont=Consolas\ for\ Powerline\ FixedD:h15
 else
   set guifont="Courier New":h15
 endif
@@ -105,6 +106,9 @@ let g:ctrlp_extensions = [
    \ 'ctrlp-filetpe',
    \ ]
 let g:ctrlp_follow_symlinks = 1
+
+" win32 fullscreen
+map <F12> <Esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<CR>
 
 " Rooter patterns for identifying root path
 let g:rooter_patterns = ['tags', '.git', '.git/', '_darcs/', '.hg/', '.bzr/', '.svn/']
@@ -351,12 +355,17 @@ map <Leader><Tab> :b#<CR>
 map <Leader>n :new<CR>
 
 map <D-r> :e<CR>
+map <T-r> :e<CR>
 
 "Key mapping for textmate-like indentation
 nmap <D-[> <<
 nmap <D-]> >>
 vmap <D-[> <gv
 vmap <D-]> >gv
+nmap <T-[> <<
+nmap <T-]> >>
+vmap <T-[> <gv
+vmap <T-]> >gv
 
 " Ctrl + S shortcut to save file
 nmap <C-s> :w<CR>
@@ -421,6 +430,7 @@ map <C-n> :bnext<CR>
 
 " Expand current buffer with Command + Shift + Return
 noremap <S-D-CR> :only <CR>
+noremap <S-T-CR> :only <CR>
 
 set pastetoggle=<F2>
 
