@@ -1,4 +1,4 @@
-endel/.vim
+endel/vimfiles
 ---
 
 My awesome VIM configuration.
@@ -27,7 +27,7 @@ It's recommended to you to read how to use each of the listed plugins below.
 
  * [* ack](https://github.com/mileszs/ack.vim)
  * [* gist-vim](https://github.com/mattn/gist-vim)
- * [* vim-powerline](https://github.com/Lokaltog/vim-powerline) - you can install the patched *Iconsolata* font at <code>utils</code> directory.
+ * [* vim-powerline](https://github.com/Lokaltog/vim-powerline) - you can install the patched *Iconsolata* font at <code>support</code> directory.
  * [ctrlp](https://github.com/kien/ctrlp.vim)
  * [ctrlp-filetype](https://github.com/endel/ctrlp-filetype.vim)
  * [vim-fugitive](https://github.com/tpope/vim-fugitive)

@@ -11,6 +11,7 @@ filetype plugin on
 filetype indent on
 
 " load all bundles
+set nocp
 call pathogen#infect()
 call pathogen#helptags()
 
@@ -108,7 +109,7 @@ let g:ctrlp_extensions = [
 let g:ctrlp_follow_symlinks = 1
 
 " win32 fullscreen
-map <F12> <Esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<CR>
+map <F11> <Esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<CR>
 
 " Rooter patterns for identifying root path
 let g:rooter_patterns = ['tags', '.git', '.git/', '_darcs/', '.hg/', '.bzr/', '.svn/']

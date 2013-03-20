@@ -145,3 +145,6 @@
 [submodule "bundle/gvimfullscreen_win32"]
 	path = bundle/gvimfullscreen_win32
 	url = git://github.com/derekmcloughlin/gvimfullscreen_win32.git
+[submodule "support/consolas-powerline-vim"]
+	path = support/consolas-powerline-vim
+	url = git://github.com/eugeneching/consolas-powerline-vim.git
