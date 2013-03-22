@@ -24,7 +24,7 @@ if has('gui_macvim')
 elseif has('gui_gtk') || has('gui_gtk2')
   set guifont="Ubuntu Mono":h15
 elseif has('gui_win32')
-  set guifont=Consolas\ for\ Powerline\ FixedD:h15
+  set guifont=Consolas\ for\ Powerline\ FixedD:h13
 else
   set guifont="Courier New":h15
 endif
