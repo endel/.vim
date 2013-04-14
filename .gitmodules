@@ -148,3 +148,9 @@
 [submodule "support/consolas-powerline-vim"]
 	path = support/consolas-powerline-vim
 	url = git://github.com/eugeneching/consolas-powerline-vim.git
+[submodule "bundle/vim-stylus"]
+	path = bundle/vim-stylus
+	url = git@github.com:wavded/vim-stylus.git
+[submodule "bundle/vim-multiple-cursors"]
+	path = bundle/vim-multiple-cursors
+	url = git@github.com:terryma/vim-multiple-cursors.git

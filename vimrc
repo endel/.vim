@@ -4,7 +4,6 @@ runtime bundle/vim-pathogen/autoload/pathogen.vim
 " No compatible with vi. Who cares about vi?
 set encoding=utf8
 set nocompatible
-set shell=zsh
 
 "load ftplugins and indent files
 filetype plugin on
@@ -29,6 +28,10 @@ else
   set guifont="Courier New":h15
 endif
 set linespace=3
+
+" centralized backup directory
+set backupdir=~/.vim/tmp,.
+set directory=~/.vim/tmp,.
 
 "set background=light
 set background=dark
@@ -95,6 +98,7 @@ let g:bufExplorerShowTabBuffer=1           " BufExplorer: show only buffers rela
 let g:bufExplorerShowRelativePath=1        " BufExplorer: show relative paths
 let g:Powerline_symbols='fancy'            " Powerline: fancy statusline (patched font)
 
+let g:ctrlp_map = '<\-t>'
 let g:ctrlp_working_path_mode = 2          " CtrlP: use the nearest ancestor that contains one of these directories or files: .git/ .hg/ .svn/ .bzr/ _darcs/
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip   " MacOSX/Linux
 " set wildignore+=tmp\*,*.swp,*.zip,*.exe    " Windows

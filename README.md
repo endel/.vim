@@ -32,22 +32,12 @@ It's recommended to you to read how to use each of the listed plugins below.
  * [ctrlp-filetype](https://github.com/endel/ctrlp-filetype.vim)
  * [vim-fugitive](https://github.com/tpope/vim-fugitive)
  * [syntastic](https://github.com/scrooloose/syntastic)
- * [javascript](https://github.com/pangloss/vim-javascript)
- * [coffeescript](https://github.com/kchmck/vim-coffee-script)
  * [vim-pathogen](https://github.com/tpope/vim-pathogen)
  * [vim-repeat](https://github.com/tpope/vim-repeat)
  * [vim-matchit](https://github.com/tsaleh/vim-matchit)
  * [nerdtree](https://github.com/scrooloose/nerdtree)
- * [actionscript](https://github.com/endel/actionscript.vim)
  * [vim-surround](https://github.com/tpope/vim-surround)
- * [vim-markdown](https://github.com/tpope/vim-markdown)
- * [vim-php](https://github.com/madflow/vim-php)
- * [vim-rails](https://github.com/tpope/vim-rails)
- * [vim-ruby](https://github.com/vim-ruby/vim-ruby)
  * [vim-endwise](https://github.com/tpope/vim-endwise)
- * [vim-less](https://github.com/groenewege/vim-less)
- * [vim-haml](https://github.com/tpope/vim-haml)
- * [vim-cucumber](https://github.com/tpope/vim-cucumber)
  * [delimitMate](https://github.com/Raimondi/delimitMate/)
  * [vim-git](https://github.com/tpope/vim-git)
  * [bufexplorer](https://github.com/corntrace/bufexplorer)
@@ -58,6 +48,20 @@ It's recommended to you to read how to use each of the listed plugins below.
  * [AutoTag](https://github.com/vim-scripts/AutoTag)
  * [supertab](https://github.com/ervandew/supertab)
  * [a](https://github.com/vim-scripts/a.vim)
+
+Syntax / Indent:
+
+ * [vim-ruby](https://github.com/vim-ruby/vim-ruby)
+ * [vim-rails](https://github.com/tpope/vim-rails)
+ * [vim-less](https://github.com/groenewege/vim-less)
+ * [vim-haml](https://github.com/tpope/vim-haml)
+ * [vim-cucumber](https://github.com/tpope/vim-cucumber)
+ * [vim-markdown](https://github.com/tpope/vim-markdown)
+ * [vim-php](https://github.com/madflow/vim-php)
+ * [vim-javascript](https://github.com/pangloss/vim-javascript)
+ * [vim-coffees-cript](https://github.com/kchmck/vim-coffee-script)
+ * [vim-stylus](https://github.com/wavded/vim-stylus)
+ * [vim-mustache](https://github.com/juvenn/mustache.vim)
 
 Utility plugins, required for some plugins.
 
