@@ -9,7 +9,7 @@
 	url = https://github.com/tpope/vim-repeat.git
 [submodule "bundle/vim-bundler"]
 	path = bundle/vim-bundler
-	url = git://github.com/tpope/vim-bundler.git
+	url = https://github.com/tpope/vim-bundler.git
 [submodule "bundle/vim-matchit"]
 	path = bundle/vim-matchit
 	url = https://github.com/tsaleh/vim-matchit.git
@@ -70,9 +70,9 @@
 [submodule "bundle/vim-rooter"]
 	path = bundle/vim-rooter
 	url = https://github.com/airblade/vim-rooter.git
-[submodule "bundle/snipmate-snippets"]
-	path = bundle/snipmate-snippets
-	url = https://github.com/honza/snipmate-snippets.git
+[submodule "bundle/vim-snippets"]
+	path = bundle/vim-snippets
+	url = https://github.com/honza/vim-snippets.git
 [submodule "bundle/nerdcommenter"]
 	path = bundle/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
@@ -100,9 +100,6 @@
 [submodule "bundle/webapi-vim"]
 	path = bundle/webapi-vim
 	url = https://github.com/mattn/webapi-vim.git
-[submodule "bundle/Command-T"]
-	path = bundle/Command-T
-	url = git@github.com:endel/Command-T.git
 [submodule "bundle/color-railscasts"]
 	path = bundle/color-railscasts
 	url = https://github.com/jpo/vim-railscasts-theme.git
@@ -123,7 +120,7 @@
 	url = https://github.com/vim-scripts/AutoTag.git
 [submodule "bundle/vim-coffee-script"]
 	path = bundle/vim-coffee-script
-	url = git://github.com/kchmck/vim-coffee-script.git
+	url = https://github.com/kchmck/vim-coffee-script.git
 [submodule "bundle/color-tomorrow-theme"]
 	path = bundle/color-tomorrow-theme
 	url = https://github.com/chriskempson/vim-tomorrow-theme.git
@@ -132,22 +129,22 @@
 	url = https://github.com/StanAngeloff/php.vim.git
 [submodule "bundle/tagbar"]
 	path = bundle/tagbar
-	url = git://github.com/majutsushi/tagbar.git
+	url = https://github.com/majutsushi/tagbar.git
 [submodule "bundle/vim-rvm"]
 	path = bundle/vim-rvm
-	url = git://github.com/tpope/vim-rvm.git
+	url = https://github.com/tpope/vim-rvm.git
 [submodule "bundle/gundo"]
 	path = bundle/gundo
-	url = http://github.com/sjl/gundo.vim.git
+	url = https://github.com/sjl/gundo.vim.git
 [submodule "bundle/mustache"]
 	path = bundle/mustache
-	url = git://github.com/juvenn/mustache.vim.git
+	url = https://github.com/juvenn/mustache.vim.git
 [submodule "bundle/gvimfullscreen_win32"]
 	path = bundle/gvimfullscreen_win32
-	url = git://github.com/derekmcloughlin/gvimfullscreen_win32.git
+	url = https://github.com/derekmcloughlin/gvimfullscreen_win32.git
 [submodule "support/consolas-powerline-vim"]
 	path = support/consolas-powerline-vim
-	url = git://github.com/eugeneching/consolas-powerline-vim.git
+	url = https://github.com/eugeneching/consolas-powerline-vim.git
 [submodule "bundle/vim-stylus"]
 	path = bundle/vim-stylus
 	url = git@github.com:wavded/vim-stylus.git
