@@ -17,9 +17,16 @@ call pathogen#helptags()
 " colors and style
 syntax enable
 
+set background=dark
+colorscheme Tomorrow-Night-Bright
+"colorscheme github
+"colorscheme vividchalk
+
 " Set font accourding to OS
 if has('gui_macvim')
   set guifont=Monaco:h12
+  set background=light
+  colorscheme solarized
 elseif has('gui_gtk') || has('gui_gtk2')
   set guifont="Ubuntu Mono":h15
 elseif has('gui_win32')
@@ -32,13 +39,6 @@ set linespace=3
 " centralized backup directory
 set backupdir=~/.vim/tmp,.
 set directory=~/.vim/tmp,.
-
-"set background=light
-set background=dark
-colorscheme Tomorrow-Night-Bright
-"colorscheme solarized
-"colorscheme github
-"colorscheme vividchalk
 
 " style
 set number
