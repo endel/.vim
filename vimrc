@@ -24,15 +24,13 @@ colorscheme Tomorrow-Night-Bright
 
 " Set font accourding to OS
 if has('gui_macvim')
-  set guifont=Monaco:h12
-  set background=light
-  colorscheme solarized
+  set guifont=Iconsolata-dz\ for\ Powerline:h12
 elseif has('gui_gtk') || has('gui_gtk2')
   set guifont="Ubuntu Mono":h15
 elseif has('gui_win32')
   set guifont=Consolas\ for\ Powerline\ FixedD:h13
 else
-  set guifont="Courier New":h15
+  set guifont=Iconsolata-dz\ for\ Powerline:h15
 endif
 set linespace=3
 
@@ -96,7 +94,7 @@ endif
 " let g:snips_trigger_key = '<c-space>'      " SnipMate: remap to Ctrl + Space
 let g:bufExplorerShowTabBuffer=1           " BufExplorer: show only buffers relative to this tab
 let g:bufExplorerShowRelativePath=1        " BufExplorer: show relative paths
-let g:Powerline_symbols='fancy'            " Powerline: fancy statusline (patched font)
+let g:airline_powerline_fonts=1
 
 let g:ctrlp_map = '<\-t>'
 let g:ctrlp_working_path_mode = 2          " CtrlP: use the nearest ancestor that contains one of these directories or files: .git/ .hg/ .svn/ .bzr/ _darcs/

@@ -88,9 +88,6 @@
 [submodule "bundle/color-vividchalk"]
 	path = bundle/color-vividchalk
 	url = https://github.com/tpope/vim-vividchalk
-[submodule "bundle/vim-powerline"]
-	path = bundle/vim-powerline
-	url = https://github.com/Lokaltog/vim-powerline.git
 [submodule "bundle/a.vim"]
 	path = bundle/a.vim
 	url = https://github.com/vim-scripts/a.vim.git
@@ -154,3 +151,9 @@
 [submodule "bundle/CoVim"]
 	path = bundle/CoVim
 	url = https://github.com/FredKSchott/CoVim.git
+[submodule "bundle/vim-blade"]
+	path = bundle/vim-blade
+	url = https://github.com/xsbeats/vim-blade.git
+[submodule "bundle/vim-airline"]
+	path = bundle/vim-airline
+	url = https://github.com/bling/vim-airline.git
