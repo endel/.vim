@@ -24,15 +24,18 @@ colorscheme Tomorrow-Night-Bright
 
 " Set font accourding to OS
 if has('gui_macvim')
-  set guifont=Iconsolata-dz\ for\ Powerline:h12
+  set guifont=Menlo\ for\ Powerline:h12
+  set linespace=5
 elseif has('gui_gtk') || has('gui_gtk2')
   set guifont="Ubuntu Mono":h15
+  set linespace=3
 elseif has('gui_win32')
   set guifont=Consolas\ for\ Powerline\ FixedD:h13
+  set linespace=3
 else
   set guifont=Iconsolata-dz\ for\ Powerline:h15
+  set linespace=3
 endif
-set linespace=3
 
 " centralized backup directory
 set backupdir=~/.vim/tmp,.
@@ -53,6 +56,11 @@ set softtabstop=2
 set expandtab
 set list listchars=tab:▸–,trail:·,nbsp:¬
 "eol:¶
+
+set exrc                  " enable per-directory .vimrc files
+                          " usually for setting (no)expandtab, shiftwidth, tabstop, etc.
+
+set secure                " disable unsafe commands in local .vimrc files
 
 " searching
 set hlsearch
