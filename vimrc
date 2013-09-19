@@ -99,7 +99,12 @@ endif
 "
 " Plugin customizations
 "
-" let g:snips_trigger_key = '<c-space>'      " SnipMate: remap to Ctrl + Space
+"imap <C-Space> <Plug>snipMateNextOrTrigger
+"smap <C-S-Space> <Plug>snipMateNextOrTrigger
+
+imap <C-J> <esc>a<Plug>snipMateNextOrTrigger
+smap <C-J> <Plug>snipMateNextOrTrigger
+
 let g:bufExplorerShowTabBuffer=1           " BufExplorer: show only buffers relative to this tab
 let g:bufExplorerShowRelativePath=1        " BufExplorer: show relative paths
 let g:airline_powerline_fonts=1
@@ -386,10 +391,8 @@ map <Leader>l :NERDTreeToggle<CR>
 " Open NERDTree
 map <Leader>L :NERDTree<CR>
 
-" ack.vim
-nmap <silent> <unique> <Leader>a :Ack
-nmap <silent> <unique> <Leader>as :AckFromSearch
-nmap <silent> <unique> <Leader>af :AckFile
+" ag.vim
+nmap <silent> <unique> <Leader>a :Ag
 
 " Copy from cursor to the end of the line
 nnoremap Y  y$

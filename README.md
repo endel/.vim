@@ -25,9 +25,11 @@ First of all, you need to init and update all bundle submodules.
 Plugins flagged with * needs attention to setup, just follow what README file of the plugin, skiping the vim installation steps.
 It's recommended to you to read how to use each of the listed plugins below.
 
- * [* ack](https://github.com/mileszs/ack.vim)
+ * [* ag](https://github.com/rking/ag.vim)
  * [* gist-vim](https://github.com/mattn/gist-vim)
- * [* vim-powerline](https://github.com/Lokaltog/vim-powerline) - you can install the patched *Iconsolata* font at <code>support</code> directory.
+ * [* vim-airline](https://github.com/bling/vim-airline) - you can install the patched *Iconsolata* font at <code>support</code> directory.
+ * [YouCompleteMe](https://github.com/Valloric/YouCompleteMe/)
+ * [editorconfig-vim](https://github.com/editorconfig/editorconfig-vim)
  * [ctrlp](https://github.com/kien/ctrlp.vim)
  * [ctrlp-filetype](https://github.com/endel/ctrlp-filetype.vim)
  * [vim-fugitive](https://github.com/tpope/vim-fugitive)
@@ -111,9 +113,7 @@ Plugins:
  * __Leader + b__ - Open ctrl-p for buffers (:CtrlPBuffer)
  * __Leader + l__ - Toggle NERDTree (:NERDTreeToggle)
  * __Leader + L__ - Open new NERDTree buffer (:NERDTree)
- * __Leader + a__ - Run :Ack [pattern]
- * __Leader + as__ - Run :AckFromSearch [pattern]
- * __Leader + af__ - Run :AckFile [pattern]
+ * __Leader + a__ - Run :Ag [pattern]
  * __Leader + B__ - Open Buffer Explorer (:BufExplorer)
 
 Indentation:
