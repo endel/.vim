@@ -145,9 +145,6 @@
 [submodule "bundle/vim-multiple-cursors"]
 	path = bundle/vim-multiple-cursors
 	url = https://github.com/terryma/vim-multiple-cursors.git
-[submodule "bundle/CoVim"]
-	path = bundle/CoVim
-	url = https://github.com/FredKSchott/CoVim.git
 [submodule "bundle/vim-blade"]
 	path = bundle/vim-blade
 	url = https://github.com/xsbeats/vim-blade.git

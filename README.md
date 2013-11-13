@@ -11,7 +11,7 @@ On MacVim, use each tab as a isolated project.
 you project's root path, and all the others plugins will follow it, such as
 [ctrlp](https://github.com/kien/ctrlp.vim),
 [nerdtree](https://github.com/scrooloose/nerdtree),
-[bufexplorer](https://github.com/corntrace/bufexplorer), etc.
+[bufexplorer](https://github.com/jlanzarotta/bufexplorer), etc.
 
 
 Plugins Setup
@@ -40,11 +40,11 @@ It's recommended to you to read how to use each of the listed plugins below.
  * [nerdtree](https://github.com/scrooloose/nerdtree)
  * [vim-surround](https://github.com/tpope/vim-surround)
  * [vim-endwise](https://github.com/tpope/vim-endwise)
- * [delimitMate](https://github.com/Raimondi/delimitMate/)
+ * [auto-pairs](https://github.com/jiangmiao/auto-pairs)
  * [vim-git](https://github.com/tpope/vim-git)
- * [bufexplorer](https://github.com/corntrace/bufexplorer)
- * [vim-snipmate](https://github.com/garbas/vim-snipmate)
+ * [bufexplorer](https://github.com/jlanzarotta/bufexplorer)
  * [vim-rooter](https://github.com/airblade/vim-rooter)
+ * [vim-snipmate](https://github.com/SirVer/ultisnips)
  * [snipmate-snippets](https://github.com/honza/snipmate-snippets)
  * [nerdcommenter](https://github.com/scrooloose/nerdcommenter)
  * [AutoTag](https://github.com/vim-scripts/AutoTag)
@@ -53,17 +53,18 @@ It's recommended to you to read how to use each of the listed plugins below.
 
 Syntax / Indent:
 
- * [vim-ruby](https://github.com/vim-ruby/vim-ruby)
- * [vim-rails](https://github.com/tpope/vim-rails)
- * [vim-less](https://github.com/groenewege/vim-less)
- * [vim-haml](https://github.com/tpope/vim-haml)
- * [vim-cucumber](https://github.com/tpope/vim-cucumber)
- * [vim-markdown](https://github.com/tpope/vim-markdown)
- * [vim-php](https://github.com/madflow/vim-php)
- * [vim-javascript](https://github.com/pangloss/vim-javascript)
- * [vim-coffees-cript](https://github.com/kchmck/vim-coffee-script)
- * [vim-stylus](https://github.com/wavded/vim-stylus)
- * [vim-mustache](https://github.com/juvenn/mustache.vim)
+ * [ruby](https://github.com/vim-ruby/vim-ruby)
+ * [rails](https://github.com/tpope/vim-rails)
+ * [less](https://github.com/groenewege/vim-less)
+ * [haml](https://github.com/tpope/vim-haml)
+ * [cucumber](https://github.com/tpope/vim-cucumber)
+ * [markdown](https://github.com/tpope/vim-markdown)
+ * [php](https://github.com/madflow/vim-php)
+ * [javascript](https://github.com/pangloss/vim-javascript)
+ * [coffees-cript](https://github.com/kchmck/vim-coffee-script)
+ * [stylus](https://github.com/wavded/vim-stylus)
+ * [mustache/handlebars](https://github.com/mustache/vim-mode)
+ * [blade](https://github.com/xsbeats/vim-blade)
 
 Utility plugins, required for some plugins.
 
