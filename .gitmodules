@@ -46,18 +46,18 @@
 [submodule "bundle/vim-cucumber"]
 	path = bundle/vim-cucumber
 	url = https://github.com/tpope/vim-cucumber.git
-[submodule "bundle/delimitMate"]
-	path = bundle/delimitMate
-	url = https://github.com/Raimondi/delimitMate/
+[submodule "bundle/auto-pairs"]
+	path = bundle/auto-pairs
+	url = https://github.com/jiangmiao/auto-pairs.git
 [submodule "bundle/vim-git"]
 	path = bundle/vim-git
 	url = https://github.com/tpope/vim-git.git
 [submodule "bundle/bufexplorer"]
 	path = bundle/bufexplorer
-	url = https://github.com/corntrace/bufexplorer.git
-[submodule "bundle/vim-snipmate"]
-	path = bundle/vim-snipmate
-	url = https://github.com/garbas/vim-snipmate.git
+	url = https://github.com/jlanzarotta/bufexplorer.git
+[submodule "bundle/ultisnips"]
+	path = bundle/ultisnips
+	url = https://github.com/SirVer/ultisnips.git
 [submodule "bundle/vim-addon-mw-utils"]
 	path = bundle/vim-addon-mw-utils
 	url = https://github.com/MarcWeber/vim-addon-mw-utils.git
@@ -70,9 +70,9 @@
 [submodule "bundle/vim-snippets"]
 	path = bundle/vim-snippets
 	url = https://github.com/honza/vim-snippets.git
-[submodule "bundle/nerdcommenter"]
-	path = bundle/nerdcommenter
-	url = https://github.com/scrooloose/nerdcommenter.git
+[submodule "bundle/tcomment"]
+	path = bundle/tcomment
+	url = https://github.com/tomtom/tcomment_vim.git
 [submodule "bundle/color-jellybeans"]
 	path = bundle/color-jellybeans
 	url = https://github.com/nanotech/jellybeans.vim.git
@@ -132,7 +132,7 @@
 	url = https://github.com/sjl/gundo.vim.git
 [submodule "bundle/mustache"]
 	path = bundle/mustache
-	url = https://github.com/juvenn/mustache.vim.git
+	url = https://github.com/mustache/vim-mode.git
 [submodule "bundle/gvimfullscreen_win32"]
 	path = bundle/gvimfullscreen_win32
 	url = https://github.com/derekmcloughlin/gvimfullscreen_win32.git
@@ -141,10 +141,10 @@
 	url = https://github.com/eugeneching/consolas-powerline-vim.git
 [submodule "bundle/vim-stylus"]
 	path = bundle/vim-stylus
-	url = git@github.com:wavded/vim-stylus.git
+	url = https://github.com/wavded/vim-stylus.git
 [submodule "bundle/vim-multiple-cursors"]
 	path = bundle/vim-multiple-cursors
-	url = git@github.com:terryma/vim-multiple-cursors.git
+	url = https://github.com/terryma/vim-multiple-cursors.git
 [submodule "bundle/CoVim"]
 	path = bundle/CoVim
 	url = https://github.com/FredKSchott/CoVim.git
