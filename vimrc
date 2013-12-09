@@ -273,6 +273,18 @@ endfunction
 " mapping to remove whitespaces
 nnoremap <silent> <S-Space> :call <SID>RemoveWhitespaces()<CR>
 
+" remove whitespaces before writing a file
+function! <SID>FixLineEndings()
+  let l = line(".")
+  let c = col(".")
+  execute "%s///g"
+  call <SID>RemoveWhitespaces()
+  call cursor(l, c)
+endfunction
+
+" mapping to remove whitespaces
+nnoremap <silent> <S-L> :call <SID>FixLineEndings()<CR>
+
 " mapping to generate tags file
 function! FlushEnvironment()
   silent! exe ":!ctags -R"
