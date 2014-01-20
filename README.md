@@ -28,7 +28,6 @@ It's recommended to you to read how to use each of the listed plugins below.
  * [* ag](https://github.com/rking/ag.vim)
  * [* gist-vim](https://github.com/mattn/gist-vim)
  * [* vim-airline](https://github.com/bling/vim-airline) - you can install the patched *Iconsolata* font at <code>support</code> directory.
- * [YouCompleteMe](https://github.com/Valloric/YouCompleteMe/)
  * [editorconfig-vim](https://github.com/editorconfig/editorconfig-vim)
  * [ctrlp](https://github.com/kien/ctrlp.vim)
  * [ctrlp-filetype](https://github.com/endel/ctrlp-filetype.vim)
@@ -44,11 +43,11 @@ It's recommended to you to read how to use each of the listed plugins below.
  * [vim-git](https://github.com/tpope/vim-git)
  * [bufexplorer](https://github.com/jlanzarotta/bufexplorer)
  * [vim-rooter](https://github.com/airblade/vim-rooter)
- * [vim-snipmate](https://github.com/SirVer/ultisnips)
- * [snipmate-snippets](https://github.com/honza/snipmate-snippets)
- * [nerdcommenter](https://github.com/scrooloose/nerdcommenter)
+ * [ultisnips](https://github.com/SirVer/ultisnips)
+ * [vim-snippets](https://github.com/honza/vim-snippets)
+ * [tcomment](https://github.com/tomtom/tcomment_vim)
+ * [gundo](https://github.com/sjl/gundo.vim.git)
  * [AutoTag](https://github.com/vim-scripts/AutoTag)
- * [supertab](https://github.com/ervandew/supertab)
  * [a](https://github.com/vim-scripts/a.vim)
 
 Syntax / Indent:
@@ -128,10 +127,12 @@ Colorschemes
 
 Awesome colorscheme flavors
 
+ * [thematic] (https://github.com/reedes/vim-thematic.git): Theme manager
  * [tomorrow] (https://github.com/chriskempson/vim-tomorrow-theme)
  * [solarized] (https://github.com/altercation/vim-colors-solarized)
  * [jellybeans](https://github.com/nanotech/jellybeans.vim)
  * [vividchalk] (https://github.com/tpope/vim-vividc)
+ * [pencil] (https://github.com/reedes/vim-colors-pencil.git)
  * [github] (https://github.com/endel/vim-github-colorscheme)
 
 

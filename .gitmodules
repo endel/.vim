@@ -154,12 +154,15 @@
 [submodule "bundle/Xdebug"]
 	path = bundle/Xdebug
 	url = https://github.com/vim-scripts/Xdebug.git
-[submodule "bundle/YouCompleteMe"]
-	path = bundle/YouCompleteMe
-	url = https://github.com/Valloric/YouCompleteMe.git
 [submodule "bundle/ag.vim"]
 	path = bundle/ag.vim
 	url = https://github.com/rking/ag.vim.git
 [submodule "bundle/editorconfig"]
 	path = bundle/editorconfig
 	url = https://github.com/editorconfig/editorconfig-vim.git
+[submodule "bundle/vim-colors-pencil"]
+	path = bundle/vim-colors-pencil
+	url = https://github.com/reedes/vim-colors-pencil.git
+[submodule "bundle/vim-thematic"]
+	path = bundle/vim-thematic
+	url = https://github.com/reedes/vim-thematic.git

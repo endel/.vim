@@ -17,10 +17,46 @@ call pathogen#helptags()
 " colors and style
 syntax enable
 
-set background=dark
+" thematic configuration
+let g:thematic#defaults = {
+      \ 'typeface': 'Menlo for Powerline',
+      \ 'colorscheme': 'Tomorrow-Night-Bright',
+      \ 'airline-theme': 'jellybeans',
+      \ 'background': 'dark',
+      \ 'font-size': 12,
+      \ 'laststatus': 2,
+      \ }
+
+let g:thematic#themes = {
+      \ 'Tomorrow-Night-Bright' : {},
+      \ 'jellybeans' : {},
+      \ 'solar_dark' : { 'colorscheme': 'solarized',
+      \                  'diff-color-fix': 1,
+      \                  'sign-column-color-fix': 1,
+      \                },
+      \ 'solar_lite' : { 'colorscheme': 'solarized',
+      \                  'background': 'light',
+      \                  'sign-column-color-fix': 1,
+      \                },
+      \ 'github'     : { 'background': 'light' },
+      \ 'pencil'     : { 'colorscheme': 'pencil',
+      \                  'background': 'light',
+      \                  'font-size': 20,
+      \                  'linespace': 8,
+      \                  'typeface': 'Cousine',
+      \                },
+      \ 'iawriter'   : { 'colorscheme': 'pencil',
+      \                  'background': 'light',
+      \                  'columns': 75,
+      \                  'font-size': 20,
+      \                  'fullscreen': 1,
+      \                  'laststatus': 0,
+      \                  'linespace': 8,
+      \                  'typeface': 'Cousine',
+      \                },
+      \ }
+
 colorscheme Tomorrow-Night-Bright
-"colorscheme github
-"colorscheme vividchalk
 
 " Set font accourding to OS
 if has('gui_macvim')
@@ -483,21 +519,17 @@ autocmd BufWritePre * :call <SID>RemoveWhitespaces()
 " Git commits: check word spelling
 autocmd FileType gitcommit setlocal spell
 
-" Ruby
-" - Allow to browser through gem ctags
-"autocmd FileType ruby let &l:tags = pathogen#legacyjoin(pathogen#uniq(
-      "\ pathogen#split(&tags) +
-      "\ map(split($GEM_PATH,':'),'v:val."/gems/*/tags"')))
-
 " Python: Better indentation
 autocmd BufNewFile,BufRead *.py setlocal nosmartindent
 
-" TXT files
+" Text/Doc files
 autocmd FileType text,markdown setlocal linebreak nowrap textwidth=80
 
 " Google protocol buffers
 autocmd Bufread,BufNewFile *.proto set filetype=javascript
 
-" TagList plugin configuration
-" let tlist_tex_settings          = 'latex;s:sections;g:graphics;l:labels'
-" let tlist_make_settings         = 'make;m:makros;t:targets'
+" Ruby
+" - Allow to browse through gem ctags
+"autocmd FileType ruby let &l:tags = pathogen#legacyjoin(pathogen#uniq(
+      "\ pathogen#split(&tags) +
+      "\ map(split($GEM_PATH,':'),'v:val."/gems/*/tags"')))
