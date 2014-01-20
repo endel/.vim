@@ -166,3 +166,6 @@
 [submodule "bundle/vim-thematic"]
 	path = bundle/vim-thematic
 	url = https://github.com/reedes/vim-thematic.git
+[submodule "bundle/vim-pairs"]
+	path = bundle/vim-pairs
+	url = https://github.com/kurkale6ka/vim-pairs.git

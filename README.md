@@ -49,6 +49,7 @@ It's recommended to you to read how to use each of the listed plugins below.
  * [gundo](https://github.com/sjl/gundo.vim.git)
  * [AutoTag](https://github.com/vim-scripts/AutoTag)
  * [a](https://github.com/vim-scripts/a.vim)
+ * [vim-pairs](https://github.com/kurkale6ka/vim-pairs)
 
 Syntax / Indent:
 
