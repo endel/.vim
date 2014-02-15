@@ -135,15 +135,9 @@ endif
 "
 " Plugin customizations
 "
-"imap <C-Space> <Plug>snipMateNextOrTrigger
-"smap <C-S-Space> <Plug>snipMateNextOrTrigger
-
-let g:UltiSnipsExpandTrigger="<C-j>"
-" let g:UltiSnipsJumpForwardTrigger="<C-j>"
-" let g:UltiSnipsJumpBackwardTrigger
-
-" imap <C-J> <esc>a<Plug>snipMateNextOrTrigger
-" smap <C-J> <Plug>snipMateNextOrTrigger
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 let g:bufExplorerShowTabBuffer=1           " BufExplorer: show only buffers relative to this tab
 let g:bufExplorerShowRelativePath=1        " BufExplorer: show relative paths

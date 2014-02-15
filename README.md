@@ -1,4 +1,4 @@
-endel/vimfiles
+endel/.vim
 ---
 
 My awesome VIM configuration.
@@ -6,7 +6,7 @@ My awesome VIM configuration.
 Usage pattern
 ---
 
-On MacVim, use each tab as a isolated project.
+On MacVim, I use each tab as a isolated project.
 [vim-rooter](https://github.com/airblade/vim-rooter) plugin will take care of
 you project's root path, and all the others plugins will follow it, such as
 [ctrlp](https://github.com/kien/ctrlp.vim),
@@ -25,7 +25,7 @@ First of all, you need to init and update all bundle submodules.
 Plugins flagged with * needs attention to setup, just follow what README file of the plugin, skiping the vim installation steps.
 It's recommended to you to read how to use each of the listed plugins below.
 
- * [* ag](https://github.com/rking/ag.vim)
+ * [* ag](https://github.com/rking/ag.vim) - `brew install ag`
  * [* gist-vim](https://github.com/mattn/gist-vim)
  * [* vim-airline](https://github.com/bling/vim-airline) - you can install the patched *Iconsolata* font at <code>support</code> directory.
  * [editorconfig-vim](https://github.com/editorconfig/editorconfig-vim)
@@ -55,13 +55,13 @@ Syntax / Indent:
 
  * [ruby](https://github.com/vim-ruby/vim-ruby)
  * [rails](https://github.com/tpope/vim-rails)
+ * [php](https://github.com/madflow/vim-php)
+ * [javascript](https://github.com/pangloss/vim-javascript)
+ * [coffees-cript](https://github.com/kchmck/vim-coffee-script)
  * [less](https://github.com/groenewege/vim-less)
  * [haml](https://github.com/tpope/vim-haml)
  * [cucumber](https://github.com/tpope/vim-cucumber)
  * [markdown](https://github.com/tpope/vim-markdown)
- * [php](https://github.com/madflow/vim-php)
- * [javascript](https://github.com/pangloss/vim-javascript)
- * [coffees-cript](https://github.com/kchmck/vim-coffee-script)
  * [stylus](https://github.com/wavded/vim-stylus)
  * [mustache/handlebars](https://github.com/mustache/vim-mode)
  * [blade](https://github.com/xsbeats/vim-blade)
