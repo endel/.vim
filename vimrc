@@ -19,7 +19,7 @@ syntax enable
 
 " thematic configuration
 let g:thematic#defaults = {
-      \ 'typeface': 'Menlo for Powerline',
+      \ 'typeface': 'Meslo LG L DZ for Powerline',
       \ 'colorscheme': 'Tomorrow-Night-Bright',
       \ 'airline-theme': 'jellybeans',
       \ 'background': 'dark',
@@ -60,7 +60,7 @@ colorscheme Tomorrow-Night-Bright
 
 " Set font accourding to OS
 if has('gui_macvim')
-  set guifont=Menlo\ for\ Powerline:h12
+  set guifont=Meslo\ LG\ L\ DZ\ for\ Powerline:h12
   set linespace=5
 elseif has('gui_gtk') || has('gui_gtk2')
   set guifont="Ubuntu Mono":h15
@@ -172,6 +172,7 @@ let g:syntastic_error_symbol = '✗'
 let g:syntastic_style_error_symbol = '✠'
 let g:syntastic_warning_symbol = '∆'
 let g:syntastic_style_warning_symbol = '≈'
+let g:syntastic_quiet_messages = { "type": "style" }
 
 " NERDTree
 let NERDTreeChDirMode=2
