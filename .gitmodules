@@ -169,3 +169,6 @@
 [submodule "bundle/vim-pairs"]
 	path = bundle/vim-pairs
 	url = https://github.com/kurkale6ka/vim-pairs.git
+[submodule "bundle/vim-gitgutter"]
+	path = bundle/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter.git

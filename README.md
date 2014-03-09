@@ -32,6 +32,7 @@ It's recommended to you to read how to use each of the listed plugins below.
  * [ctrlp](https://github.com/kien/ctrlp.vim)
  * [ctrlp-filetype](https://github.com/endel/ctrlp-filetype.vim)
  * [vim-fugitive](https://github.com/tpope/vim-fugitive)
+ * [vim-gitgutter](https://github.com/airblade/vim-gitgutter)
  * [syntastic](https://github.com/scrooloose/syntastic)
  * [vim-pathogen](https://github.com/tpope/vim-pathogen)
  * [vim-repeat](https://github.com/tpope/vim-repeat)
