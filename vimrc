@@ -157,6 +157,10 @@ let g:ctrlp_extensions = [
    \ ]
 let g:ctrlp_follow_symlinks = 1
 
+" phpdoc
+let g:pdv_template_dir = $HOME . "/.vim/bundle/pdv/templates_snip"
+autocmd BufRead *.php nnoremap <buffer> <C-p> :call pdv#DocumentWithSnip()<CR>
+
 " win32 fullscreen
 map <F11> <Esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<CR>
 
@@ -464,10 +468,6 @@ map <3-MiddleMouse> <Nop>
 imap <3-MiddleMouse> <Nop>
 map <4-MiddleMouse> <Nop>
 imap <4-MiddleMouse> <Nop>
-
-" Before / next buffer navigation using ctrl + p / ctrl + n
-map <C-p> :bprev<CR>
-map <C-n> :bnext<CR>
 
 " Expand current buffer with Command + Shift + Return
 noremap <S-D-CR> :only <CR>

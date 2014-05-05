@@ -99,8 +99,6 @@ Diff:
 Buffers:
 
  * __Command + Shift + Enter__ - Expand current buffer (:only)
- * __Ctrl + n__ - Go to next buffer (:bnext)
- * __Ctrl + p__ - Go to previous buffer (:bprev)
  * __Leader + Tab__ - Swap to last edited buffer (:b#)
  * __Leader + d__ - Close current buffer (:bd)
  * __Leader + D__ - Close current buffer without saving (:bd!)
