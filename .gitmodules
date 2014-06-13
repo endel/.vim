@@ -178,9 +178,6 @@
 [submodule "bundle/vmustache"]
 	path = bundle/vmustache
 	url = https://github.com/tobyS/vmustache.git
-[submodule "bundle/tern"]
-	path = bundle/tern
-	url = https://github.com/marijnh/tern_for_vim.git
 [submodule "bundle/vim-go"]
 	path = bundle/vim-go
 	url = https://github.com/fatih/vim-go.git
