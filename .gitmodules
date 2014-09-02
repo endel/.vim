@@ -181,3 +181,6 @@
 [submodule "bundle/vim-go"]
 	path = bundle/vim-go
 	url = https://github.com/fatih/vim-go.git
+[submodule "bundle/vdebug"]
+	path = bundle/vdebug
+	url = https://github.com/joonty/vdebug.git
