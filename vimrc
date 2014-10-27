@@ -297,6 +297,8 @@ function! <SID>FixLineEndings()
   call cursor(l, c)
 endfunction
 
+com! FormatJSON %!python -m json.tool
+
 " mapping to remove whitespaces
 nnoremap <silent> <S-L> :call <SID>FixLineEndings()<CR>
 
