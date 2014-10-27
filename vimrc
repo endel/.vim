@@ -147,15 +147,27 @@ let g:ctrlp_map = '<\-t>'
 let g:ctrlp_working_path_mode = 2          " CtrlP: use the nearest ancestor that contains one of these directories or files: .git/ .hg/ .svn/ .bzr/ _darcs/
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip   " MacOSX/Linux
 " set wildignore+=tmp\*,*.swp,*.zip,*.exe    " Windows
-let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\.git$\|\.hg$\|\.svn$\|node_modules',
-    \ 'file': '\.pyc$\|\.pyo$\|\.rbc$|\.rbo$\|\.class$\|\.o$\|\~$\|\.DS_Store',
-    \ 'link': 'some_bad_symbolic_links',
-    \ }
+
+let g:ctrlp_user_command = {
+  \ 'types': {
+  \ 1: ['.git', 'cd %s && git ls-files --cached --exclude-standard --others'],
+  \ 2: ['.hg', 'hg --cwd %s locate -I .'],
+  \ },
+  \ 'fallback': 'find %s -type f'
+  \ }
+
+" let g:ctrlp_custom_ignore = {
+"     \ 'dir':  '\.git$\|\.hg$\|\.svn$\|node_modules',
+"     \ 'file': '\.pyc$\|\.pyo$\|\.rbc$|\.rbo$\|\.class$\|\.o$\|\~$\|\.DS_Store',
+"     \ 'link': 'some_bad_symbolic_links',
+"     \ }
+
 let g:ctrlp_extensions = [
    \ 'ctrlp-filetpe',
    \ ]
 let g:ctrlp_follow_symlinks = 1
+
+let g:pomodoro_notification_cmd = "mpg123 -q ~/.vim/pomodoro-notification.mp3"
 
 " phpdoc
 let g:pdv_template_dir = $HOME . "/.vim/bundle/pdv/templates_snip"
