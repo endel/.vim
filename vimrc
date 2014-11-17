@@ -517,6 +517,9 @@ autocmd FileType text,markdown setlocal linebreak nowrap textwidth=80
 " Google protocol buffers
 autocmd Bufread,BufNewFile *.proto set filetype=javascript
 
+" associate *.vue with html filetype
+autocmd BufRead,BufNewFile *.vue set filetype=html
+
 " Ruby
 " - Allow to browse through gem ctags
 "autocmd FileType ruby let &l:tags = pathogen#legacyjoin(pathogen#uniq(
