@@ -193,3 +193,6 @@
 [submodule "bundle/MatchTagAlways.git"]
 	path = bundle/MatchTagAlways.git
 	url = https://github.com/Valloric/MatchTagAlways.git
+[submodule "bundle/vim-swift"]
+	path = bundle/vim-swift
+	url = https://github.com/toyamarinyon/vim-swift.git
