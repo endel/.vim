@@ -196,3 +196,6 @@
 [submodule "bundle/vim-swift"]
 	path = bundle/vim-swift
 	url = https://github.com/toyamarinyon/vim-swift.git
+[submodule "bundle/vim-elixir"]
+	path = bundle/vim-elixir
+	url = https://github.com/elixir-lang/vim-elixir.git
