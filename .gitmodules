@@ -184,9 +184,6 @@
 [submodule "bundle/vim-csharp"]
 	path = bundle/vim-csharp
 	url = https://github.com/OrangeT/vim-csharp.git
-[submodule "bundle/rust.vim"]
-	path = bundle/rust.vim
-	url = https://github.com/wting/rust.vim.git
 [submodule "bundle/emmet-vim"]
 	path = bundle/emmet-vim
 	url = https://github.com/mattn/emmet-vim.git
