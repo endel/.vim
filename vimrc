@@ -188,7 +188,8 @@ let g:syntastic_error_symbol = '✗'
 let g:syntastic_style_error_symbol = '✠'
 let g:syntastic_warning_symbol = '∆'
 let g:syntastic_style_warning_symbol = '≈'
-let g:syntastic_quiet_messages = { "type": "style" }
+" let g:syntastic_quiet_messages = { "type": "style" }
+let g:syntastic_mode_map = { 'passive_filetypes': ['sass', 'scss']  }
 
 " NERDTree
 let NERDTreeChDirMode=2
