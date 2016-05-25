@@ -41,12 +41,12 @@ Leader key: `\`
 - `Leader` + `t`: open fuzzy file finder (:CtrlP)
 - `Leader` + `a` + `space` + `keyword`: search in files for _`keyword`_ (:CtrlP)
 
-**Interacting with the system clipboard**
+**interacting with the system clipboard**
 
-`Leader` + `y`: yank to the system clipboard
-`Leader` + `d`: delete to the system clipboard
-`Leader` + `p`: paste from the system clipboard
-`Leader` + `P`: paste before from the system clipboard
+- `Leader` + `y`: yank to the system clipboard
+- `Leader` + `d`: delete to the system clipboard
+- `Leader` + `p`: paste from the system clipboard
+- `Leader` + `P`: paste before from the system clipboard
 
 License
 ---
