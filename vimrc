@@ -59,6 +59,9 @@ Plugin 'othree/yajs.vim'
 Plugin 'othree/es.next.syntax.vim'
 Plugin 'ternjs/tern_for_vim'
 
+" TypeScript
+Plugin 'leafgarland/typescript-vim'
+
 " Editing
 Plugin 'tomtom/tcomment_vim'
 Plugin 'terryma/vim-multiple-cursors'
@@ -128,7 +131,7 @@ set directory=~/.vim/tmp,.
 
 " style
 set number
-set autoindent
+set noautoindent
 
 " Set the terminal's title
 set title
@@ -349,6 +352,7 @@ autocmd FileType gitcommit setlocal spell
 
 " Python: Better indentation
 autocmd BufNewFile,BufRead *.py setlocal nosmartindent
+autocmd BufNewFile,BufRead *.js setlocal nosmartindent
 
 " Text/Doc files
 autocmd FileType text,markdown setlocal linebreak nowrap textwidth=80
@@ -358,3 +362,15 @@ autocmd Bufread,BufNewFile *.proto set filetype=javascript
 
 " associate *.vue with html filetype
 autocmd BufRead,BufNewFile *.vue set filetype=html
+
+" TODO:
+" TypeScript: use tsconfig.json for linting
+" function! TSLint(where)
+"     let cfg = findfile('tsconfig.json', escape(a:where, ' ') . ';')
+"     return cfg !=# '' ? '-c ' . cfg : ''
+" endfunction
+"
+" autocmd FileType typescript let b:syntastic_typescript_tslint_args = TSLint(expand('<amatch>:p:h', 1))
+
+" TypeScript: set filetype on *.ts files
+autocmd BufNewFile,BufRead *.ts set filetype=typescript
