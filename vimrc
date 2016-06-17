@@ -125,9 +125,13 @@ else
   set linespace=3
 endif
 
-" centralized backup directory
+" avoid backup files in working directory
 set backupdir=~/.vim/tmp,.
 set directory=~/.vim/tmp,.
+
+" persistent undo between sessions
+set undofile
+set undodir=~/.vim/tmp
 
 " style
 set number
@@ -349,13 +353,12 @@ autocmd FileType gitcommit setlocal spell
 
 " Python: Better indentation
 autocmd BufNewFile,BufRead *.py setlocal nosmartindent
-autocmd BufNewFile,BufRead *.js setlocal nosmartindent
 
 " Text/Doc files
 autocmd FileType text,markdown setlocal linebreak nowrap textwidth=80
 
 " Google protocol buffers
-autocmd Bufread,BufNewFile *.proto set filetype=javascript
+autocmd Bufread,BufNewFile *.proto,*.jslib set filetype=javascript
 
 " associate *.vue with html filetype
 autocmd BufRead,BufNewFile *.vue set filetype=html
