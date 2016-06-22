@@ -25,6 +25,8 @@ Leader key: `\`
 - `Leader` + `2`: switch to tab number 2 (2gt)
 - `Leader` + `...`: ...you got it
 - `Leader` + `0`: switch to last tab (:tablast)
+- **dgh** - Get diff from left buffer (:diffget //2 | diffupdate)
+- **dgl** - Get diff from right buffer (:diffget //3 | diffupdate)
 
 **interacting with buffers**
 

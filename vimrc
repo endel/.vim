@@ -300,6 +300,10 @@ nmap <Leader>P "+P
 vmap <Leader>p "+p
 vmap <Leader>P "+P
 
+" Easy diffget on a 3-way diff
+nnoremap dgh :diffget //2 \| diffupdate <CR>
+nnoremap dgl :diffget //3 \| diffupdate <CR>
+
 map <Leader>B :if exists(":BufExplorer")<Bar>exe "BufExplorer"<Bar>else<Bar>buffers<Bar>endif<CR>
 
 " Disable middle-click paste (causes too many accidents with crappy mice)
