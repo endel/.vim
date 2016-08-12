@@ -22,6 +22,7 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'endel/ctrlp-filetype.vim'
 Plugin 'airblade/vim-rooter'
 Plugin 'gcmt/taboo.vim'
+Plugin 'Shougo/vimproc.vim'
 
 " Utilities
 Plugin 'tpope/vim-dispatch'
@@ -35,10 +36,10 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'scrooloose/syntastic'
 Plugin 'sjl/gundo.vim'
 " > snippets
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
 Plugin 'rking/ag.vim'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 
 " Ruby
 Plugin 'vim-ruby/vim-ruby'
@@ -61,6 +62,7 @@ Plugin 'ternjs/tern_for_vim'
 
 " TypeScript
 Plugin 'leafgarland/typescript-vim'
+Plugin 'Quramy/tsuquyomi'
 
 " Editing
 Plugin 'tomtom/tcomment_vim'
@@ -112,7 +114,6 @@ colorscheme Tomorrow-Night-Bright
 
 " Set font accourding to OS
 if has('gui_macvim')
-  set guifont=Meslo\ LG\ L\ DZ\ for\ Powerline:h12
   set linespace=5
 elseif has('gui_gtk') || has('gui_gtk2')
   set guifont="Ubuntu Mono":h15
@@ -121,9 +122,10 @@ elseif has('gui_win32')
   set guifont=Consolas\ for\ Powerline\ FixedD:h13
   set linespace=3
 else
-  set guifont=Iconsolata-dz\ for\ Powerline:h15
   set linespace=3
 endif
+
+set guifont=Iconsolata-dz\ for\ Powerline:h11
 
 " avoid backup files in working directory
 set backupdir=~/.vim/tmp,.
@@ -375,6 +377,7 @@ autocmd BufRead,BufNewFile *.vue set filetype=html
 " endfunction
 "
 " autocmd FileType typescript let b:syntastic_typescript_tslint_args = TSLint(expand('<amatch>:p:h', 1))
+let g:syntastic_mode_map = { 'passive_filetypes': ['typescript'] }
 
 " TypeScript: set filetype on *.ts files
 autocmd BufNewFile,BufRead *.ts set filetype=typescript
