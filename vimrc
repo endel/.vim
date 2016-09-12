@@ -364,7 +364,7 @@ autocmd BufNewFile,BufRead *.py setlocal nosmartindent
 autocmd FileType text,markdown setlocal linebreak nowrap textwidth=80
 
 " Google protocol buffers
-autocmd Bufread,BufNewFile *.proto,*.jslib set filetype=javascript
+autocmd Bufread,BufNewFile *.proto,*.jslib,*.jsfl set filetype=javascript
 
 " associate *.vue with html filetype
 autocmd BufRead,BufNewFile *.vue set filetype=html
