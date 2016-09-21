@@ -302,6 +302,12 @@ nmap <Leader>P "+P
 vmap <Leader>p "+p
 vmap <Leader>P "+P
 
+" buffer resizing mappings (shift + arrow key)
+nnoremap <Up> <c-w>+
+nnoremap <Down> <c-w>-
+nnoremap <Left> <c-w><
+nnoremap <Right> <c-w>>
+
 " Easy diffget on a 3-way diff
 nnoremap dgh :diffget //2 \| diffupdate <CR>
 nnoremap dgl :diffget //3 \| diffupdate <CR>
