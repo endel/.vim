@@ -86,7 +86,7 @@ Plugin 'wavded/vim-stylus'
 " Plugin 'tpope/vim-cucumber'
 " Plugin 'xsbeats/vim-blade'
 " Plugin 'jdonaldson/vaxe'
-" Plugin 'tobyS/vmustache'
+Plugin 'tobyS/vmustache'
 
 " Themes
 Plugin 'reedes/vim-thematic'
@@ -114,6 +114,7 @@ colorscheme Tomorrow-Night-Bright
 
 " Set font accourding to OS
 if has('gui_macvim')
+  set macligatures
   set linespace=5
 elseif has('gui_gtk') || has('gui_gtk2')
   set guifont="Ubuntu Mono":h15
@@ -125,7 +126,7 @@ else
   set linespace=3
 endif
 
-set guifont=Iconsolata-dz\ for\ Powerline:h11
+set guifont=Fira\ Mono:h12
 
 " avoid backup files in working directory
 set backupdir=~/.vim/tmp,.
