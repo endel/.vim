@@ -8,6 +8,8 @@ Usage
 
 I usually use tabs for each project I'm working on simultaneously.
 
+- [Font files](https://github.com/powerline/fonts/tree/master/FiraMono)
+
 Key bindings
 ---
 
