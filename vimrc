@@ -270,7 +270,7 @@ map <Leader>D :bd!<CR>
 " Close and save current buffer
 
 " cp = copies the path for current buffer
-nmap cp :let @" = expand("%")
+nmap cp :let @" = expand("%") <CR>
 
 " " (this might screw pair-programming with non-vim users)
 " " Force yourself to stop using arrow keys
