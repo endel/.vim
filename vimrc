@@ -269,6 +269,9 @@ map <Leader>d :bd<CR>
 map <Leader>D :bd!<CR>
 " Close and save current buffer
 
+" cp = copies the path for current buffer
+nmap cp :let @" = expand("%")
+
 " " (this might screw pair-programming with non-vim users)
 " " Force yourself to stop using arrow keys
 " map <up> <nop>
