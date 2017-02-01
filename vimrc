@@ -352,6 +352,9 @@ function! <SID>RemoveWhitespaces()
   call cursor(l, c)
 endfunction")"
 
+" Format current JSON buffer
+command! JSONFormat :%!python -m json.tool
+
 "
 " Opening buffer behaviours
 " -------------------------
