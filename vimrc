@@ -179,6 +179,8 @@ set laststatus=2          " Always show status line
 set nofoldenable          " Folding sucks
 set scrolloff=5           " Always shows 5 lines above/below the cursor
 
+set diffopt+=vertical     " Use vertical view for :Gdiff
+
 "
 " Plugin customizations
 "
