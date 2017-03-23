@@ -35,9 +35,11 @@ Plugin 'mattn/gist-vim'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'scrooloose/syntastic'
 Plugin 'sjl/gundo.vim'
-" > snippets
 Plugin 'rking/ag.vim'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'metakirby5/codi.vim'
+
+" Snippets
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 
