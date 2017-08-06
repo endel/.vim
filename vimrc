@@ -4,113 +4,103 @@ filetype off                  " required
 set term=xterm-256color
 syntax enable
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+call plug#begin('~/.vim/plugged')
 
 " essentials
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'tomtom/tlib_vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'bling/vim-airline'
-Plugin 'jlanzarotta/bufexplorer'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'endel/ctrlp-filetype.vim'
-Plugin 'airblade/vim-rooter'
-Plugin 'gcmt/taboo.vim'
-Plugin 'Shougo/vimproc.vim'
+Plug 'VundleVim/Vundle.vim'
+Plug 'tomtom/tlib_vim'
+Plug 'scrooloose/nerdtree'
+Plug 'bling/vim-airline'
+Plug 'jlanzarotta/bufexplorer'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'endel/ctrlp-filetype.vim'
+Plug 'airblade/vim-rooter'
+Plug 'gcmt/taboo.vim'
+Plug 'Shougo/vimproc.vim'
 
 " Utilities
-Plugin 'tpope/vim-dispatch'
-Plugin 'tpope/vim-git'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-surround'
-Plugin 'mattn/webapi-vim' " dependency of 'mattn/gist-vim'
-Plugin 'mattn/gist-vim'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'scrooloose/syntastic'
-Plugin 'sjl/gundo.vim'
-Plugin 'rking/ag.vim'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'metakirby5/codi.vim'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-git'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'mattn/webapi-vim' " dependency of 'mattn/gist-vim'
+Plug 'mattn/gist-vim'
+Plug 'jiangmiao/auto-pairs'
+Plug 'scrooloose/syntastic'
+Plug 'sjl/gundo.vim'
+Plug 'rking/ag.vim'
+Plug 'Valloric/YouCompleteMe'
+Plug 'metakirby5/codi.vim'
 
 " Snippets
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 " Ruby
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'tpope/vim-endwise'
+Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-endwise'
 
 " C/C++
-Plugin 'vim-scripts/a.vim'
+Plug 'vim-scripts/a.vim'
 
 " PHP
-" Plugin 'tobyS/pdv'
+" Plug 'tobyS/pdv'
 
 " HTML
-Plugin 'mattn/emmet-vim'
-Plugin 'Valloric/MatchTagAlways'
+Plug 'mattn/emmet-vim'
+Plug 'Valloric/MatchTagAlways'
 
 " JavaScript
-Plugin 'othree/yajs.vim'
-Plugin 'othree/es.next.syntax.vim'
-Plugin 'ternjs/tern_for_vim'
+Plug 'othree/yajs.vim'
+Plug 'othree/es.next.syntax.vim'
+Plug 'ternjs/tern_for_vim'
+Plug 'prettier/vim-prettier', {
+      \ 'do': 'yarn install',
+      \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql'] }
+
+" NodeJS
+Plug 'sidorares/node-vim-debugger'
 
 " TypeScript
-Plugin 'leafgarland/typescript-vim'
-Plugin 'Quramy/tsuquyomi'
+Plug 'leafgarland/typescript-vim'
+Plug 'Quramy/tsuquyomi'
 
 " Editing
-Plugin 'tomtom/tcomment_vim'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'kurkale6ka/vim-pairs'
+Plug 'tomtom/tcomment_vim'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'kurkale6ka/vim-pairs'
 
 " Syntax
-Plugin 'fatih/vim-go'
-Plugin 'StanAngeloff/php.vim'
-Plugin 'OrangeT/vim-csharp'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'tpope/vim-markdown'
-Plugin 'tpope/vim-haml'
-Plugin 'rust-lang/rust.vim'
-Plugin 'rhysd/vim-crystal'
-Plugin 'elixir-lang/vim-elixir'
-Plugin 'toyamarinyon/vim-swift'
+Plug 'fatih/vim-go'
+Plug 'StanAngeloff/php.vim'
+Plug 'OrangeT/vim-csharp'
+Plug 'kchmck/vim-coffee-script'
+Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-haml'
+Plug 'rust-lang/rust.vim'
+Plug 'rhysd/vim-crystal'
+Plug 'elixir-lang/vim-elixir'
+Plug 'toyamarinyon/vim-swift'
 " > css preprocessors
-" Plugin 'groenewege/vim-less'
-Plugin 'wavded/vim-stylus'
-" Plugin 'tpope/vim-cucumber'
-" Plugin 'xsbeats/vim-blade'
-" Plugin 'jdonaldson/vaxe'
-Plugin 'tobyS/vmustache'
+" Plug 'groenewege/vim-less'
+Plug 'wavded/vim-stylus'
+" Plug 'tpope/vim-cucumber'
+" Plug 'xsbeats/vim-blade'
+" Plug 'jdonaldson/vaxe'
+Plug 'tobyS/vmustache'
 
 " Themes
-Plugin 'reedes/vim-thematic'
-Plugin 'reedes/vim-colors-pencil'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'chriskempson/vim-tomorrow-theme'
+Plug 'reedes/vim-thematic'
+Plug 'reedes/vim-colors-pencil'
+Plug 'altercation/vim-colors-solarized'
+Plug 'chriskempson/vim-tomorrow-theme'
+Plug 'dracula/vim'
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+" Initialize plugin system
+call plug#end()
 
 colorscheme Tomorrow-Night-Bright
 
