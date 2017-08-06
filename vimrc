@@ -9,7 +9,7 @@ call plug#begin('~/.vim/plugged')
 " essentials
 Plug 'VundleVim/Vundle.vim'
 Plug 'tomtom/tlib_vim'
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'bling/vim-airline'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'editorconfig/editorconfig-vim'
@@ -18,7 +18,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'endel/ctrlp-filetype.vim'
 Plug 'airblade/vim-rooter'
 Plug 'gcmt/taboo.vim'
-Plug 'Shougo/vimproc.vim'
+Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 
 " Utilities
 Plug 'tpope/vim-dispatch'
@@ -32,7 +32,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/syntastic'
 Plug 'sjl/gundo.vim'
 Plug 'rking/ag.vim'
-Plug 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'metakirby5/codi.vim'
 
 " Snippets
