@@ -49,6 +49,12 @@ Plug 'vim-scripts/a.vim'
 " PHP
 " Plug 'tobyS/pdv'
 
+" GameMaker Language
+Plug 'nessss/vim-gml'
+
+" Haxe
+Plug 'yaymukund/vim-haxe'
+
 " HTML
 Plug 'mattn/emmet-vim'
 Plug 'Valloric/MatchTagAlways'
@@ -91,6 +97,7 @@ Plug 'wavded/vim-stylus'
 " Plug 'xsbeats/vim-blade'
 " Plug 'jdonaldson/vaxe'
 Plug 'tobyS/vmustache'
+Plug 'cespare/vim-toml'
 
 " Themes
 Plug 'reedes/vim-thematic'
@@ -388,3 +395,7 @@ let g:syntastic_mode_map = { 'passive_filetypes': ['typescript'] }
 
 " TypeScript: set filetype on *.ts files
 autocmd BufNewFile,BufRead *.ts set filetype=typescript
+
+" Defold: set filetype of scripts to lua
+autocmd BufNewFile,BufRead *.script set filetype=lua
+autocmd BufNewFile,BufRead *.gui_script set filetype=lua
