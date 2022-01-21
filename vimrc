@@ -74,6 +74,9 @@ Plug 'sidorares/node-vim-debugger'
 Plug 'leafgarland/typescript-vim'
 Plug 'Quramy/tsuquyomi'
 
+" Zig
+Plug 'ziglang/zig.vim'
+
 " Editing
 Plug 'tomtom/tcomment_vim'
 Plug 'terryma/vim-multiple-cursors'
@@ -177,8 +180,6 @@ set foldmethod=marker
 set laststatus=2          " Always show status line
 set nofoldenable          " Folding sucks
 set scrolloff=5           " Always shows 5 lines above/below the cursor
-
-set diffopt+=vertical     " Use vertical view for :Gdiff
 
 "
 " Plugin customizations
