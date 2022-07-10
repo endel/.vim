@@ -1,17 +1,20 @@
-endel/.vim
-===
+# endel/.vim
 
-My awesome VIM configuration.
+My vim configuration.
 
-Usage
----
+## Usage
 
 I usually use tabs for each project I'm working on simultaneously.
 
 - [Font files](https://github.com/powerline/fonts/tree/master/FiraMono)
 
-Key bindings
----
+## Installation
+
+```
+:CocInstall coc-json coc-tsserver
+```
+
+## Key bindings
 
 Leader key: `\`
 
@@ -32,7 +35,7 @@ Leader key: `\`
 
 **interacting with buffers**
 
-- `Leader` + `b`: list open buffers (on this tab/project)
+- `Leader` + `B`: list open buffers (on this tab/project)
 - `Leader` + `n`: create a new buffer
 - `Leader` + `tab`: switch to last open buffer
 - `Leader` + `d`: close current buffer (:bd)
@@ -41,7 +44,6 @@ Leader key: `\`
 **utilities**
 
 - `Leader` + `l`: open tree viewer (:NERDTreeToggle)
-- `Leader` + `u`: open undo utility (:GundoToggle)
 - `Leader` + `t`: open fuzzy file finder (:CtrlP)
 - `Leader` + `a` + `space` + `keyword`: search in files for _`keyword`_ (:CtrlP)
 
