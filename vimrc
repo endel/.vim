@@ -7,7 +7,7 @@ syntax enable
 call plug#begin('~/.vim/plugged')
 
 " essentials
-Plug 'VundleVim/Vundle.vim'
+" Plug 'VundleVim/Vundle.vim'
 Plug 'tomtom/tlib_vim'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'bling/vim-airline'
@@ -30,10 +30,13 @@ Plug 'mattn/webapi-vim' " dependency of 'mattn/gist-vim'
 Plug 'mattn/gist-vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/syntastic'
-Plug 'sjl/gundo.vim'
 Plug 'rking/ag.vim'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'metakirby5/codi.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" Writing
+Plug 'junegunn/goyo.vim'
+" Plug 'junegunn/limelight.vim'
 
 " Snippets
 Plug 'SirVer/ultisnips'
@@ -63,15 +66,13 @@ Plug 'Valloric/MatchTagAlways'
 Plug 'othree/yajs.vim'
 Plug 'othree/es.next.syntax.vim'
 Plug 'ternjs/tern_for_vim'
-Plug 'prettier/vim-prettier', {
-      \ 'do': 'yarn install',
-      \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql'] }
 
 " NodeJS
 Plug 'sidorares/node-vim-debugger'
 
 " TypeScript
 Plug 'leafgarland/typescript-vim'
+Plug 'maxmellon/vim-jsx-pretty'
 Plug 'Quramy/tsuquyomi'
 
 " Zig
@@ -103,16 +104,19 @@ Plug 'tobyS/vmustache'
 Plug 'cespare/vim-toml'
 
 " Themes
-Plug 'reedes/vim-thematic'
-Plug 'reedes/vim-colors-pencil'
-Plug 'altercation/vim-colors-solarized'
+" Plug 'reedes/vim-thematic'
+" Plug 'reedes/vim-colors-pencil'
+" Plug 'altercation/vim-colors-solarized'
 Plug 'chriskempson/vim-tomorrow-theme'
-Plug 'dracula/vim'
+" Plug 'dracula/vim'
+Plug 'eemed/sitruuna.vim'
+
 
 " Initialize plugin system
 call plug#end()
 
-colorscheme Tomorrow-Night-Bright
+" colorscheme Tomorrow-Night-Bright
+colorscheme sitruuna
 
 " Set font accourding to OS
 if has('gui_macvim')
@@ -133,6 +137,9 @@ set guifont=Fira\ Mono:h12
 " avoid backup files in working directory
 set backupdir=~/.vim/tmp,.
 set directory=~/.vim/tmp,.
+
+" backspace on insert mode
+set backspace=indent,eol,start
 
 " persistent undo between sessions
 set undofile
@@ -236,8 +243,6 @@ endif
 " Custom key mapping
 " ------------------
 "
-map <Leader>u :GundoToggle<CR>
-
 " Leader + Tab: Switching to the previously edited buffer
 map <Leader><Tab> :b#<CR>
 
@@ -247,17 +252,21 @@ map <Leader>n :new<CR>
 map <D-r> :e<CR>
 map <T-r> :e<CR>
 
-" Toggle NERDTree
+" NERDTree
 map <Leader>l :NERDTreeToggle<CR>
-
-" Open NERDTree
 map <Leader>L :NERDTree<CR>
+map <Leader>r :NERDTreeFind<CR><c-w>w
+" map <Leader>r :NERDTreeFind<CR>
+
 
 " Open CtrlP
 nnoremap <Leader>t :CtrlP<CR>
 
 " ag.vim
 nmap <silent> <Leader>a :Ag
+
+" Open NERDTree
+map <Leader>g :Goyo<CR>
 
 " Copy from cursor to the end of the line
 nnoremap Y  y$
@@ -308,6 +317,9 @@ nmap <Leader>P "+P
 vmap <Leader>p "+p
 vmap <Leader>P "+P
 
+" highlight
+nnoremap <Leader><space> :nohl <CR>
+
 " buffer resizing mappings (shift + arrow key)
 nnoremap <Up> <c-w>+
 nnoremap <Down> <c-w>-
@@ -333,6 +345,12 @@ imap <4-MiddleMouse> <Nop>
 " Expand current buffer with Command + Shift + Return
 noremap <S-D-CR> :only <CR>
 noremap <S-T-CR> :only <CR>
+
+" neoclide/coc.nvim: go-to code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
 "
 " Utility functions
@@ -383,6 +401,17 @@ autocmd Bufread,BufNewFile *.proto,*.jslib,*.jsfl set filetype=javascript
 
 " associate *.vue with html filetype
 autocmd BufRead,BufNewFile *.vue set filetype=html
+
+" display column to better visualize indentation
+autocmd FileType yml set cursorcolumn
+autocmd FileType yaml set cursorcolumn
+autocmd FileType python set cursorcolumn
+
+" TODO: configure Limelight (missing color config for current colorscheme)
+" " Goyo + Limelight (Distraction-free writing)
+" autocmd! User GoyoEnter Limelight
+" autocmd! User GoyoLeave Limelight!
+
 
 " TODO:
 " TypeScript: use tsconfig.json for linting

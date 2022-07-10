@@ -1,0 +1,8 @@
+{
+   "languageserver": {
+       "zls" : {
+           "command": "/Users/endel/Projects/zig/zls/zig-out/bin/zls",
+           "filetypes": ["zig"]
+       }
+   }
+}
