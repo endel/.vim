@@ -3,6 +3,14 @@
        "zls" : {
            "command": "/Users/endel/Projects/zig/zls/zig-out/bin/zls",
            "filetypes": ["zig"]
+       },
+       "clangd": {
+         "command": "/opt/homebrew/Cellar/llvm/13.0.1/bin/clangd",
+         "rootPatterns": ["compile_flags.txt", "compile_commands.json"],
+         "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"]
        }
-   }
+   },
+
+   "javascript.suggest.autoImports": true,
+   "typescript.suggest.autoImports": true
 }

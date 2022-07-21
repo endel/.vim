@@ -32,15 +32,19 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'scrooloose/syntastic'
 Plug 'rking/ag.vim'
 Plug 'metakirby5/codi.vim'
+
+" Code Completion (Conquer of Completion / CoC)
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'clangd/coc-clangd'
+
 
 " Writing
 Plug 'junegunn/goyo.vim'
 " Plug 'junegunn/limelight.vim'
 
-" Snippets
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
+" " Snippets
+" Plug 'SirVer/ultisnips'
+" Plug 'honza/vim-snippets'
 
 " Ruby
 Plug 'vim-ruby/vim-ruby'
@@ -80,7 +84,7 @@ Plug 'ziglang/zig.vim'
 
 " Editing
 Plug 'tomtom/tcomment_vim'
-Plug 'terryma/vim-multiple-cursors'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'kurkale6ka/vim-pairs'
 
 " Syntax
@@ -191,9 +195,10 @@ set scrolloff=5           " Always shows 5 lines above/below the cursor
 "
 " Plugin customizations
 "
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+" let g:UltiSnipsExpandTrigger="<c-j>"
+" let g:UltiSnipsJumpForwardTrigger="<tab>"
+" let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 let g:bufExplorerShowTabBuffer=1           " BufExplorer: show only buffers relative to this tab
 let g:bufExplorerShowRelativePath=1        " BufExplorer: show relative paths
@@ -223,7 +228,7 @@ let g:ag_working_path_mode = 'r'
 " Authoring
 " ---------
 
-let g:snips_author = $USER
+" let g:snips_author = $USER
 
 " Configure Gist plugin
 let g:github_user = $USER
@@ -385,7 +390,8 @@ autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
 	\| exe "normal g'\"" | endif
 
 " Remove white spaces on write
-autocmd BufWritePre * :call <SID>RemoveWhitespaces()
+" (except on .zig files, due to `zig fmt` command)
+autocmd BufWritePre *\(.zig\)\@<! :call <SID>RemoveWhitespaces()
 
 " Git commits: check word spelling
 autocmd FileType gitcommit setlocal spell
